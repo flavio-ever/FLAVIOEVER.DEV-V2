@@ -14,6 +14,7 @@ export default function HomeTemplate() {
       {/* About */}
       <S.Container>
         <S.DescricaoContent>
+          <S.Dot />
           <S.DescricaoTitulo>
             Olá! Sou o <span>Flavio Everton</span>
             <br />
