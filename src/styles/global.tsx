@@ -8,6 +8,7 @@ const CustomStyles = createGlobalStyle`
     --custom-purple-2: #25272E;
     --custom-purple-3: #C0BAED;
     --custom-purple-4: #E3E0FF;
+    --custom-orange-1: #FF7700;
   }
 
   body {

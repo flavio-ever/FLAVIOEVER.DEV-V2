@@ -12,10 +12,10 @@ export default function HomeTemplate() {
       <Navbar />
 
       {/* About */}
-      <S.ContainerAbout>
-        <S.Descricao>
+      <S.Container>
+        <S.DescricaoContent>
           <S.DescricaoTitulo>
-            Olá! Sou o Flavio Everton
+            Olá! Sou o <span>Flavio Everton</span>
             <br />
             Eu construo coisas para web.
           </S.DescricaoTitulo>
@@ -24,16 +24,16 @@ export default function HomeTemplate() {
             aplicações e experiências digitais incríveis! Atualmente, estou
             trabalhando com integrações B2B e B2C na @Infracommerce.
           </S.DescricaoSubTitulo>
-        </S.Descricao>
-        <S.Imagem>
+        </S.DescricaoContent>
+        <S.ImagemContent>
           <Image
             layout="intrinsic"
             width={545}
             height={681}
             src="/img/eu_avatar_overlay.png"
           />
-        </S.Imagem>
-      </S.ContainerAbout>
+        </S.ImagemContent>
+      </S.Container>
     </S.Main>
   )
 }
