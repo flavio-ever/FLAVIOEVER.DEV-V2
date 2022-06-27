@@ -2,32 +2,38 @@ import tw, { styled, css } from 'twin.macro'
 
 export const Main = styled.main(() => [
   tw`
-  container
-
-  mt-28
-  font-thin
-  font-FiraCode
-  text-purple-3`
+    container
+    font-thin
+    font-FiraCode
+    text-purple-3
+  `
 ])
 
 export const Container = styled.div(() => [
   tw`
-  flex
-  sm:justify-between
-  items-center
-  justify-center
-  flex-col-reverse
-  sm:flex-row
+    h-screen
+    flex
+    items-center
+    justify-center
+    flex-col-reverse
+  `,
+  tw`
+    sm:justify-between
+    sm:flex-row
   `
 ])
 
 export const DescricaoContent = styled.div(() => [
   tw`
-  relative
-  flex-initial
-  md:w-2/3
-  md:mr-40
-  space-y-20`
+    relative
+    flex-initial
+  `,
+  tw`
+    sm:w-1/2
+    xl:pr-20
+    space-y-5
+    xl:space-y-20
+  `
 ])
 
 export const Dot = styled.div(() => [
@@ -35,6 +41,9 @@ export const Dot = styled.div(() => [
     absolute
     -top-3
     -left-20
+
+    invisible
+    xl:visible
   `,
   css`
     // Colors
@@ -68,9 +77,9 @@ export const Dot = styled.div(() => [
 
 export const DescricaoTitulo = styled.div(() => [
   tw`
-  text-white-1
-  text-3xl
-  leading-relaxed
+    text-white-1
+    text-3xl
+    leading-relaxed
   `,
   css`
     > span {
@@ -83,4 +92,13 @@ export const DescricaoTitulo = styled.div(() => [
 
 export const DescricaoSubTitulo = styled.div(() => [tw``])
 
-export const ImagemContent = styled.div(() => [tw`flex-initial md:w-1/3`])
+export const ImagemContent = styled.div(() => [
+  tw`
+    flex-initial
+    flex
+    justify-end
+  `,
+  tw`
+    sm:w-1/2
+  `
+])
