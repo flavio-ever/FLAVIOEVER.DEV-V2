@@ -11,30 +11,33 @@ export default function HomeTemplate() {
       {/* Navbar */}
       <Navbar />
 
-      {/* About */}
-      <S.Container>
-        <S.DescricaoContent>
-          <S.Dot />
-          <S.DescricaoTitulo>
+      {/* Intro */}
+      <S.IntroContainer>
+        <S.IntroDescricaoContent>
+          <S.IntroDot />
+          <S.IntroDescricaoTitulo>
             Olá! Sou o <span>Flavio Everton</span>
             <br />
             Eu construo coisas para web.
-          </S.DescricaoTitulo>
-          <S.DescricaoSubTitulo>
+          </S.IntroDescricaoTitulo>
+          <S.IntroDescricaoSubTitulo>
             Sou um desenvolvedor de software especializado em construir
             aplicações e experiências digitais incríveis! Atualmente, estou
             trabalhando com integrações B2B e B2C na @Infracommerce.
-          </S.DescricaoSubTitulo>
-        </S.DescricaoContent>
-        <S.ImagemContent>
+          </S.IntroDescricaoSubTitulo>
+        </S.IntroDescricaoContent>
+        <S.IntroImagemContent>
           <Image
             layout="intrinsic"
             width={545}
             height={681}
             src="/img/eu_avatar_overlay.png"
           />
-        </S.ImagemContent>
-      </S.Container>
+        </S.IntroImagemContent>
+      </S.IntroContainer>
+
+      {/* About */}
+      <S.AboutContainer>x</S.AboutContainer>
     </S.Main>
   )
 }

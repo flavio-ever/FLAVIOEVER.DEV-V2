@@ -9,7 +9,11 @@ export const Main = styled.main(() => [
   `
 ])
 
-export const Container = styled.div(() => [
+/**
+ * SECTION: Intro
+ */
+
+export const IntroContainer = styled.section(() => [
   tw`
     h-screen
     flex
@@ -23,7 +27,7 @@ export const Container = styled.div(() => [
   `
 ])
 
-export const DescricaoContent = styled.div(() => [
+export const IntroDescricaoContent = styled.div(() => [
   tw`
     relative
     flex-initial
@@ -36,7 +40,7 @@ export const DescricaoContent = styled.div(() => [
   `
 ])
 
-export const Dot = styled.div(() => [
+export const IntroDot = styled.div(() => [
   tw`
     absolute
     -top-3
@@ -75,7 +79,7 @@ export const Dot = styled.div(() => [
   `
 ])
 
-export const DescricaoTitulo = styled.div(() => [
+export const IntroDescricaoTitulo = styled.div(() => [
   tw`
     text-white-1
     text-3xl
@@ -90,9 +94,9 @@ export const DescricaoTitulo = styled.div(() => [
   `
 ])
 
-export const DescricaoSubTitulo = styled.div(() => [tw``])
+export const IntroDescricaoSubTitulo = styled.div(() => [tw``])
 
-export const ImagemContent = styled.div(() => [
+export const IntroImagemContent = styled.div(() => [
   tw`
     flex-initial
     flex
@@ -100,5 +104,22 @@ export const ImagemContent = styled.div(() => [
   `,
   tw`
     sm:w-1/2
+  `
+])
+
+/**
+ * SECTION: Intro
+ */
+export const AboutContainer = styled.section(() => [
+  tw`
+    h-screen
+    flex
+    items-center
+    justify-center
+    flex-col-reverse
+  `,
+  tw`
+    sm:justify-between
+    sm:flex-row
   `
 ])
