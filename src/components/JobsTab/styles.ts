@@ -36,7 +36,7 @@ export const JobsTabNav = styled.nav(() => [
         content: '';
         position: absolute;
         top: 0;
-        left: 0.2rem;
+        left: 0.1rem;
         width: 1px;
         background: var(--custom-purple-2);
         height: 100%;
