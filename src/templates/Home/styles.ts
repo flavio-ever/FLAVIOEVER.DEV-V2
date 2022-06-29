@@ -13,10 +13,15 @@ export const Main = styled.main(() => [
 export const Title = styled.main(() => [
   tw`
     text-purple-2
-    text-9xl
-    font-medium
+    text-4xl
+
     before:content-['<']
     after:content-['/>']
+  `,
+  tw`
+    sm:text-6xl
+    lg:text-8xl
+    xl:text-9xl
   `
 ])
 
@@ -126,13 +131,13 @@ export const SobreMimContainer = styled.section(() => [
     flex
     flex-col
     items-center
-    justify-start
-    space-y-20
+    justify-center
 
-
-    min-h-[40rem]
+    space-y-10
+    min-h-[50vh]
   `,
   tw`
+    sm:space-y-20
   `
 ])
 
@@ -144,28 +149,30 @@ export const ExperienciasContainer = styled.section(() => [
     flex
     flex-col
     items-center
-    justify-start
-    space-y-20
+    justify-center
 
-
-    min-h-[40rem]
+    space-y-10
+    min-h-[50vh]
   `,
   tw`
+    sm:space-y-20
   `
 ])
 
-export const StyledJobsSection = styled.div(() => [
-  css`
-    max-width: 700px;
-    .inner {
-      display: flex;
-      @media (max-width: 600px) {
-        display: block;
-      }
-      // Prevent container from jumping
-      @media (min-width: 700px) {
-        min-height: 340px;
-      }
-    }
+/**
+ * SECTION: Experiencias
+ */
+export const TrabalhosContainer = styled.section(() => [
+  tw`
+    flex
+    flex-col
+    items-center
+    justify-center
+
+    space-y-10
+    min-h-[50vh]
+  `,
+  tw`
+    sm:space-y-20
   `
 ])

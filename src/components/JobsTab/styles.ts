@@ -8,11 +8,11 @@ export const Container = styled.div(() => [
     flex
     flex-col
     overflow-x-hidden
+    w-full
   `,
   tw`
     sm:overflow-visible
     sm:flex-row
-    sm:w-full
   `,
   css``
 ])
@@ -23,11 +23,13 @@ export const JobsTabNav = styled.nav(() => [
     flex
     flex-row
     overflow-x-auto
+    mb-5
   `,
   tw`
     sm:overflow-hidden
     sm:flex-col
     sm:mr-10
+    sm:mb-auto
     sm:min-w-max
   `,
   css`

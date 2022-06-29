@@ -38,6 +38,7 @@ export default function HomeTemplate() {
         </S.IntroImagemContent>
       </S.IntroContainer>
 
+      <hr />
       {/* SobreMim */}
       <S.SobreMimContainer>
         <S.Title>sobre_mim</S.Title>
@@ -51,12 +52,18 @@ export default function HomeTemplate() {
           eum placeat.
         </p>
       </S.SobreMimContainer>
+      <hr />
 
       {/* Experiencias */}
       <S.ExperienciasContainer>
         <S.Title>experiencias</S.Title>
         <JobsTab />
       </S.ExperienciasContainer>
+      <hr />
+      {/* Trabalhos */}
+      <S.TrabalhosContainer>
+        <S.Title>Trabalhos</S.Title>
+      </S.TrabalhosContainer>
     </S.Main>
   )
 }

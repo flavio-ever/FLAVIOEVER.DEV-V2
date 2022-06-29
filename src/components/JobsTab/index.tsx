@@ -82,16 +82,14 @@ const JobsTab: React.FC = () => {
                   <h2 tw="text-lg">
                     <span tw="text-white-1">{occupation}</span>
                     {'  '}
-                    <span tw="text-orange-1">
-                      <a
-                        href={url}
-                        className="inline-link"
-                        target={'_blank'}
-                        rel="noreferrer"
-                      >
-                        @{company}
-                      </a>
-                    </span>
+                    <a
+                      href={url}
+                      className="inline-link"
+                      target={'_blank'}
+                      rel="noreferrer"
+                    >
+                      @{company}
+                    </a>
                   </h2>
                   <p tw="mt-2">{range}</p>
                   <div tw="mt-4" dangerouslySetInnerHTML={{ __html: html }} />
