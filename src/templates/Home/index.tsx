@@ -38,10 +38,25 @@ export default function HomeTemplate() {
         </S.IntroImagemContent>
       </S.IntroContainer>
 
-      {/* About */}
-      <S.AboutContainer>
+      {/* SobreMim */}
+      <S.SobreMimContainer>
+        <S.Title>sobre_mim</S.Title>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda,
+          libero odit eligendi suscipit sunt fuga molestias rem! Odit nesciunt
+          sed rem, nostrum a assumenda? Maxime suscipit eveniet officia eum
+          placeat. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Assumenda, libero odit eligendi suscipit sunt fuga molestias rem! Odit
+          nesciunt sed rem, nostrum a assumenda? Maxime suscipit eveniet officia
+          eum placeat.
+        </p>
+      </S.SobreMimContainer>
+
+      {/* Experiencias */}
+      <S.ExperienciasContainer>
+        <S.Title>experiencias</S.Title>
         <JobsTab />
-      </S.AboutContainer>
+      </S.ExperienciasContainer>
     </S.Main>
   )
 }

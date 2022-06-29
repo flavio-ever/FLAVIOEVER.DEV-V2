@@ -10,6 +10,16 @@ export const Main = styled.main(() => [
   `
 ])
 
+export const Title = styled.main(() => [
+  tw`
+    text-purple-2
+    text-9xl
+    font-medium
+    before:content-['<']
+    after:content-['/>']
+  `
+])
+
 /**
  * SECTION: Intro
  */
@@ -109,13 +119,36 @@ export const IntroImagemContent = styled.div(() => [
 ])
 
 /**
- * SECTION: Intro
+ * SECTION: SobreMim
  */
-export const AboutContainer = styled.section(() => [
+export const SobreMimContainer = styled.section(() => [
   tw`
     flex
+    flex-col
     items-center
-    justify-center
+    justify-start
+    space-y-20
+
+
+    min-h-[40rem]
+  `,
+  tw`
+  `
+])
+
+/**
+ * SECTION: Experiencias
+ */
+export const ExperienciasContainer = styled.section(() => [
+  tw`
+    flex
+    flex-col
+    items-center
+    justify-start
+    space-y-20
+
+
+    min-h-[40rem]
   `,
   tw`
   `
