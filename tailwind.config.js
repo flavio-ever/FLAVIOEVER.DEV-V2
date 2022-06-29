@@ -1,7 +1,7 @@
 const paletteColors = {
   purple: {
     1: '#251D3A',
-    2: '#25272E',
+    2: '#322650',
     3: '#C0BAED',
     4: '#E3E0FF'
   },

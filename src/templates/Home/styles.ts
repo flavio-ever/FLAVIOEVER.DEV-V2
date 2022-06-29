@@ -6,6 +6,7 @@ export const Main = styled.main(() => [
     font-thin
     font-FiraCode
     text-purple-3
+    mt-28
   `
 ])
 
@@ -112,14 +113,26 @@ export const IntroImagemContent = styled.div(() => [
  */
 export const AboutContainer = styled.section(() => [
   tw`
-    h-screen
     flex
     items-center
     justify-center
-    flex-col-reverse
   `,
   tw`
-    sm:justify-between
-    sm:flex-row
+  `
+])
+
+export const StyledJobsSection = styled.div(() => [
+  css`
+    max-width: 700px;
+    .inner {
+      display: flex;
+      @media (max-width: 600px) {
+        display: block;
+      }
+      // Prevent container from jumping
+      @media (min-width: 700px) {
+        min-height: 340px;
+      }
+    }
   `
 ])

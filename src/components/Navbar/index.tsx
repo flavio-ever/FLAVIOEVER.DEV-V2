@@ -8,7 +8,7 @@ import { IoClose } from 'react-icons/io5'
 
 import * as S from './styles'
 
-export default function Navbar() {
+const Navbar: React.FC = () => {
   const [visible, setVisible] = useState<boolean>(false)
 
   return (
@@ -62,3 +62,5 @@ export default function Navbar() {
     </S.NavbarHeader>
   )
 }
+
+export default Navbar

@@ -1,9 +1,11 @@
 import React from 'react'
+import Image from 'next/image'
+
 import * as S from './styles'
 
 // Components
 import Navbar from 'components/Navbar'
-import Image from 'next/image'
+import JobsTab from 'components/JobsTab'
 
 export default function HomeTemplate() {
   return (
@@ -37,7 +39,9 @@ export default function HomeTemplate() {
       </S.IntroContainer>
 
       {/* About */}
-      <S.AboutContainer>x</S.AboutContainer>
+      <S.AboutContainer>
+        <JobsTab />
+      </S.AboutContainer>
     </S.Main>
   )
 }
