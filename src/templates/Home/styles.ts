@@ -15,6 +15,8 @@ export const Title = styled.main(() => [
     text-purple-2
     text-4xl
 
+    m-20
+
     before:content-['<']
     after:content-['/>']
   `,
@@ -133,8 +135,8 @@ export const SobreMimContainer = styled.section(() => [
     items-center
     justify-center
 
-    space-y-10
-    min-h-[50vh]
+    space-y-20
+    min-h-[100vh]
   `,
   tw`
     sm:space-y-20
@@ -151,8 +153,7 @@ export const ExperienciasContainer = styled.section(() => [
     items-center
     justify-center
 
-    space-y-10
-    min-h-[80vh]
+    min-h-[100vh]
   `,
   tw`
     sm:space-y-20
@@ -169,8 +170,7 @@ export const TrabalhosContainer = styled.section(() => [
     items-center
     justify-center
 
-    space-y-10
-    min-h-[80vh]
+    min-h-[100vh]
   `,
   tw`
     sm:space-y-20
