@@ -3,8 +3,6 @@ import tw, { styled, css } from 'twin.macro'
 export const Main = styled.main(() => [
   tw`
     container
-    font-thin
-    font-FiraCode
     text-purple-3
     mt-28
   `

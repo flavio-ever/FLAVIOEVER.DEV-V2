@@ -1,11 +1,13 @@
 import React from 'react'
 import Image from 'next/image'
+import { IoMdDownload } from 'react-icons/io'
 
 import * as S from './styles'
 
 // Components
 import Navbar from 'components/Navbar'
 import JobsTab from 'components/JobsTab'
+import Button from 'components/Button'
 
 export default function HomeTemplate() {
   return (
@@ -47,6 +49,10 @@ export default function HomeTemplate() {
           Assumenda, libero odit eligendi suscipit sunt fuga molestias rem! Odit
           nesciunt sed rem, nostrum a assumenda? Maxime suscipit eveniet officia
           eum placeat.
+          <Button>
+            <IoMdDownload />
+            <p>Baixar meu cv</p>
+          </Button>
         </p>
       </S.SobreMimContainer>
       <hr />

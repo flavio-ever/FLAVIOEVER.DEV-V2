@@ -18,6 +18,9 @@ const CustomStyles = createGlobalStyle`
 
   body {
     ${tw`antialiased`};
+
+    ${tw`font-FiraCode font-thin`};
+
     background-color: var(--custom-purple-1);
 
     ::-webkit-scrollbar {
