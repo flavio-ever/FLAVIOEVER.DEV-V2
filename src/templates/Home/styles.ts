@@ -152,7 +152,7 @@ export const ExperienciasContainer = styled.section(() => [
     justify-center
 
     space-y-10
-    min-h-[50vh]
+    min-h-[80vh]
   `,
   tw`
     sm:space-y-20
@@ -170,7 +170,7 @@ export const TrabalhosContainer = styled.section(() => [
     justify-center
 
     space-y-10
-    min-h-[50vh]
+    min-h-[80vh]
   `,
   tw`
     sm:space-y-20

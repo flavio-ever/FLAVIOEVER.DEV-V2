@@ -12,7 +12,6 @@ export default function HomeTemplate() {
     <S.Main>
       {/* Navbar */}
       <Navbar />
-
       {/* Intro */}
       <S.IntroContainer>
         <S.IntroDescricaoContent>
@@ -37,8 +36,6 @@ export default function HomeTemplate() {
           />
         </S.IntroImagemContent>
       </S.IntroContainer>
-
-      <hr />
       {/* SobreMim */}
       <S.SobreMimContainer>
         <S.Title>sobre_mim</S.Title>
@@ -53,7 +50,6 @@ export default function HomeTemplate() {
         </p>
       </S.SobreMimContainer>
       <hr />
-
       {/* Experiencias */}
       <S.ExperienciasContainer>
         <S.Title>experiencias</S.Title>
