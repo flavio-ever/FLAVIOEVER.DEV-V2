@@ -19,7 +19,7 @@ export const NavbarList = styled.ul<TUlList>(({ visible }) => [
   tw`min-h-screen sm:min-h-0`,
   tw`fixed top-0 right-0 left-0 sm:static`,
   tw`space-y-6 sm:flex sm:space-y-0 sm:space-x-4`,
-  tw`transition-all duration-500 sm:transition-none`,
+  tw`transition-all duration-500 sm:transition-none text-purple-3`,
   css`
     ::before {
       content: '<ul>';
@@ -41,7 +41,12 @@ export const NavbarList = styled.ul<TUlList>(({ visible }) => [
 ])
 
 export const NavbarListItem = styled.li(() => [
-  tw`text-purple-3 hover:text-purple-4`,
+  tw`text-purple-3 hover:text-purple-3`,
   tw`flex flex-col `,
-  tw`text-center space-y-2 transition-colors duration-200`
+  tw`text-center space-y-2 transition-colors duration-200`,
+  css`
+    a {
+      color: var(--custom-purple-3);
+    }
+  `
 ])
