@@ -1,7 +1,7 @@
 const paletteColors = {
   purple: {
     1: '#251D3A',
-    2: '#322650',
+    2: '#3D3355',
     3: '#C0BAED',
     4: '#E3E0FF'
   },
@@ -37,6 +37,7 @@ module.exports = {
     fontFamily: {
       FiraCode: ['Fira Code', 'monospace']
     },
+    colors: paletteColors,
     textColor: paletteColors,
     extend: {
       colors: paletteColors,

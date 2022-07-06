@@ -1,4 +1,4 @@
-import tw, { styled, css } from 'twin.macro'
+import tw, { styled, css, theme } from 'twin.macro'
 
 type TJobsTabNavItem = { isActive: boolean }
 type JobsTabNavItemSelected = { activeTabId: number }
@@ -40,7 +40,7 @@ export const JobsTabNav = styled.nav(() => [
         top: 0;
         left: 0.1rem;
         width: 1px;
-        background: var(--custom-purple-2);
+        background-color: ${theme`colors.purple.2`};
         height: 100%;
       }
     }
@@ -109,7 +109,7 @@ export const JobsTabPanelDescription = styled.article(() => [
           position: relative;
           left: -1rem;
           top: 0rem;
-          border: solid var(--custom-orange-1);
+          border: solid ${theme`colors.orange.1`};
           border-width: 0 2px 2px 0;
           display: inline-block;
           padding: 2px;

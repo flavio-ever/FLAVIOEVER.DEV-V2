@@ -1,4 +1,4 @@
-import tw, { styled, css } from 'twin.macro'
+import tw, { styled, css, theme } from 'twin.macro'
 
 export const Main = styled.main(() => [
   tw`
@@ -67,7 +67,7 @@ export const IntroDot = styled.div(() => [
   `,
   css`
     // Colors
-    --bg-color: var(--custom-purple-1);
+    --bg-color: ${theme`colors.purple.1`};
     --dot-color: rgba(255, 255, 255, 0.4);
 
     // Dimensions
@@ -104,7 +104,7 @@ export const IntroDescricaoTitulo = styled.div(() => [
   css`
     > span {
       display: inline-block;
-      background-color: var(--custom-orange-1);
+      background-color: ${theme`colors.orange.1`};
       padding: 0 1rem;
     }
   `

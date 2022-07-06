@@ -1,4 +1,4 @@
-import tw, { styled, css } from 'twin.macro'
+import tw, { styled, css, theme } from 'twin.macro'
 
 type TUlList = {
   visible: boolean
@@ -24,12 +24,12 @@ export const NavbarList = styled.ul<TUlList>(({ visible }) => [
     ::before {
       content: '<ul>';
       margin-right: 1rem;
-      color: var(--custom-purple-4);
+      color: ${theme`colors.purple.4`};
     }
     ::after {
       content: '</ul>';
       margin-left: 1rem;
-      color: var(--custom-purple-4);
+      color: ${theme`colors.purple.4`};
     }
   `,
   visible &&
@@ -46,7 +46,7 @@ export const NavbarListItem = styled.li(() => [
   tw`text-center space-y-2 transition-colors duration-200`,
   css`
     a {
-      color: var(--custom-purple-3);
+      color: ${theme`colors.purple.3`};
     }
   `
 ])
