@@ -37,10 +37,6 @@ const CustomStyles = createGlobalStyle`
       border-radius: 10px;
     }
 
-    a {
-      color: var(--custom-orange-1)
-    }
-
     hr {
       border-color: var(--custom-purple-2);
     }

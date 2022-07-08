@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import { RiGlobalLine, RiGithubFill } from 'react-icons/ri'
 
 import * as S from './style'
 
@@ -20,11 +21,27 @@ const JobsCard: React.FC<CardProps> = ({ job, id }) => (
   <S.Container>
     <S.InfoWrap>
       <h1>0{id}</h1>
-      <h2>{job.title}</h2>
-      <S.Description>{job.description}</S.Description>
-      <div>
-        {job.links.github} / {job.links.preview}
-      </div>
+
+      <S.Description>
+        <h2>{job.title}</h2>
+        <p>{job.description}</p>
+      </S.Description>
+      <ul>
+        <li>
+          {job.links?.github && (
+            <a href="" target="blank">
+              <RiGithubFill />
+            </a>
+          )}
+        </li>
+        <li>
+          {job.links?.preview && (
+            <a href="" target="blank">
+              <RiGlobalLine />
+            </a>
+          )}
+        </li>
+      </ul>
     </S.InfoWrap>
     <S.ImageWrap>
       <Image layout="responsive" width={500} height={360} src={job.image} />

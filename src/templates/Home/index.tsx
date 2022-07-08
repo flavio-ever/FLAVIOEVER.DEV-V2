@@ -73,19 +73,20 @@ export default function HomeTemplate() {
           Assumenda, libero odit eligendi suscipit sunt fuga molestias rem! Odit
           nesciunt sed rem, nostrum a assumenda? Maxime suscipit eveniet officia
           eum placeat.
+          <br />
+          <br />
+          <br />
           <Button>
             <IoMdDownload />
             <p>Baixar meu cv</p>
           </Button>
         </p>
       </S.SobreMimContainer>
-      <hr />
       {/* Experiencias */}
       <S.ExperienciasContainer>
         <S.Title>experiencias</S.Title>
         <JobsTab />
       </S.ExperienciasContainer>
-      <hr />
       {/* Trabalhos */}
       <S.TrabalhosContainer>
         <S.Title>Trabalhos</S.Title>

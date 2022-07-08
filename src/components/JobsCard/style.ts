@@ -4,18 +4,28 @@ import tw, { css, theme } from 'twin.macro'
 export const Container = styled.div(() => [
   tw`
     flex
-    justify-between
+    justify-center
     w-full
     relative
     m-5
     `,
   tw`
   `,
-  css``
+  css`
+    * {
+      //border: 1px solid red;
+    }
+  `
 ])
 
 export const InfoWrap = styled.div(() => [
   tw`
+    flex
+    flex-col
+
+    justify-between
+
+
     absolute
     z-10
     p-3
@@ -24,11 +34,14 @@ export const InfoWrap = styled.div(() => [
     space-y-5
   `,
   tw`
+    sm:w-2/6
+    md:w-3/6
+
     sm:bg-purple-1/0
     sm:p-0
     sm:relative
-    sm:w-4/6
-    sm:pr-16
+    sm:pr-10
+
   `,
   css`
     h1 {
@@ -54,11 +67,10 @@ export const InfoWrap = styled.div(() => [
       }
     }
 
-    h2 {
-      ${tw`
-      text-white-1
-        text-2xl
-      `};
+    ul {
+      li {
+        ${tw`inline-block text-purple-4 pr-5 text-3xl`};
+      }
     }
   `
 ])
@@ -66,6 +78,7 @@ export const InfoWrap = styled.div(() => [
 export const Description = styled.div(() => [
   tw`
     text-purple-4
+    space-y-4
     `,
   tw`
   `,
@@ -77,7 +90,14 @@ export const Description = styled.div(() => [
     -webkit-line-clamp: 3;
 
     @media only screen and (min-width: 640px) {
-      -webkit-line-clamp: 6;
+      -webkit-line-clamp: 4;
+    }
+
+    h2 {
+      ${tw`
+      text-white-1
+        text-2xl
+      `};
     }
   `
 ])
@@ -86,17 +106,24 @@ export const ImageWrap = styled.div(() => [
   tw`
     relative
     w-full
+    shadow-md
   `,
   tw`
-    sm:w-2/6
+    sm:w-4/6
+    md:w-4/6
     sm:max-w-[31.25rem]
     sm:max-h-[22.5rem]
     `,
   css`
-    @media only screen and (min-width: 640px) {
+    @media only screen and (min-width: 1280px) {
       // Colors
       --bg-color: ${theme`colors.purple.1`};
       --dot-color: rgba(255, 255, 255, 0.4);
+
+      // Dimensions
+      --dot-size: 0.09rem;
+      --dot-space: 0.5rem;
+
       --linear-bg: linear-gradient(
             90deg,
             var(--bg-color) calc(var(--dot-space) - var(--dot-size)),
@@ -109,10 +136,6 @@ export const ImageWrap = styled.div(() => [
           )
           center,
         var(--dot-color);
-
-      // Dimensions
-      --dot-size: 0.09rem;
-      --dot-space: 0.5rem;
 
       ::before {
         content: '';
@@ -132,11 +155,15 @@ export const ImageWrap = styled.div(() => [
         width: 15.5rem;
         height: 15.5rem;
         z-index: -10;
-        right: -2rem;
-        bottom: -2rem;
+        right: -1rem;
+        bottom: -1rem;
         background: var(--linear-bg);
         background-size: var(--dot-space) var(--dot-space);
       }
+    }
+
+    img {
+      ${tw`rounded-md`};
     }
   `
 ])
