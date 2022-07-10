@@ -185,11 +185,11 @@ export const ContatoContainer = styled.section(() => [
     items-center
     justify-center
     min-h-[50vh]
+    mb-20
+    text-center
   `,
   tw`
-    sm:space-y-20
+    space-y-20
   `,
-  css`
-    border: 1px solid red !important;
-  `
+  css``
 ])

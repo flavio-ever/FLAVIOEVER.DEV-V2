@@ -101,7 +101,7 @@ export default function HomeTemplate() {
       </S.TrabalhosContainer>
 
       {/* Contato */}
-      <S.TrabalhosContainer>
+      <S.ContatoContainer>
         <S.Title>contato</S.Title>
         <p>
           Embora eu não esteja procurando novas oportunidades, você está
@@ -112,7 +112,7 @@ export default function HomeTemplate() {
           <IoMailUnreadOutline />
           <p>Deixe seu h3ll0 w0rld!</p>
         </Button>
-      </S.TrabalhosContainer>
+      </S.ContatoContainer>
     </S.Main>
   )
 }
