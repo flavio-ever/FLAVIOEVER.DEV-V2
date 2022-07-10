@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { IoMdDownload } from 'react-icons/io'
+import { IoMailUnreadOutline } from 'react-icons/io5'
 
 import * as S from './styles'
 
@@ -38,6 +39,7 @@ export default function HomeTemplate() {
     <S.Main>
       {/* Navbar */}
       <Navbar />
+
       {/* Intro */}
       <S.IntroContainer>
         <S.IntroDescricaoContent>
@@ -62,6 +64,7 @@ export default function HomeTemplate() {
           />
         </S.IntroImagemContent>
       </S.IntroContainer>
+
       {/* SobreMim */}
       <S.SobreMimContainer>
         <S.Title>sobre_mim</S.Title>
@@ -82,17 +85,33 @@ export default function HomeTemplate() {
           </Button>
         </p>
       </S.SobreMimContainer>
+
       {/* Experiencias */}
       <S.ExperienciasContainer>
         <S.Title>experiencias</S.Title>
         <JobsTab />
       </S.ExperienciasContainer>
+
       {/* Trabalhos */}
       <S.TrabalhosContainer>
-        <S.Title>Trabalhos</S.Title>
+        <S.Title>trabalhos</S.Title>
         {jobs.map((job, key) => (
           <JobsCard key={key} job={job} id={key + 1} />
         ))}
+      </S.TrabalhosContainer>
+
+      {/* Contato */}
+      <S.TrabalhosContainer>
+        <S.Title>contato</S.Title>
+        <p>
+          Embora eu não esteja procurando novas oportunidades, você está
+          convidado para entrar em contato comigo. Quando puder, prometo
+          responder.
+        </p>
+        <Button>
+          <IoMailUnreadOutline />
+          <p>Deixe seu h3ll0 w0rld!</p>
+        </Button>
       </S.TrabalhosContainer>
     </S.Main>
   )

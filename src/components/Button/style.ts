@@ -29,6 +29,9 @@ export const Container = styled.button(() => [
     hover:text-white-1
       `,
   css`
+    svg {
+      ${tw`text-[1.4rem]`}
+    }
     transition: background-color 0.2s;
   `
 ])

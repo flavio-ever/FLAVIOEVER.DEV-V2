@@ -99,6 +99,10 @@ export const JobsTabPanels = styled.section(() => [tw`sm:w-full`])
 
 export const JobsTabPanelDescription = styled.article(() => [
   css`
+    a {
+      color: ${theme`colors.orange.1`};
+    }
+
     ul {
       position: relative;
       list-style: none;

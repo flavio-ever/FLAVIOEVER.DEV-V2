@@ -12,6 +12,7 @@ export const Title = styled.main(() => [
   tw`
     text-purple-2
     text-4xl
+    font-medium
 
     m-12
 
@@ -158,7 +159,7 @@ export const ExperienciasContainer = styled.section(() => [
 ])
 
 /**
- * SECTION: Experiencias
+ * SECTION: Trabalhos
  */
 export const TrabalhosContainer = styled.section(() => [
   tw`
@@ -171,5 +172,24 @@ export const TrabalhosContainer = styled.section(() => [
   `,
   tw`
     sm:space-y-20
+  `
+])
+
+/**
+ * SECTION: Contato
+ */
+export const ContatoContainer = styled.section(() => [
+  tw`
+    flex
+    flex-col
+    items-center
+    justify-center
+    min-h-[50vh]
+  `,
+  tw`
+    sm:space-y-20
+  `,
+  css`
+    border: 1px solid red !important;
   `
 ])

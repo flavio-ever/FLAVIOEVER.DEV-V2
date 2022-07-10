@@ -69,7 +69,7 @@ export const InfoWrap = styled.div(() => [
 
     ul {
       li {
-        ${tw`inline-block text-purple-4 pr-5 text-3xl`};
+        ${tw`inline-block text-purple-4 hover:text-orange-1 pr-2 text-2xl transition-colors`};
       }
     }
   `
