@@ -184,12 +184,14 @@ export const ContatoContainer = styled.section(() => [
     flex-col
     items-center
     justify-center
-    min-h-[50vh]
     mb-20
     text-center
   `,
   tw`
-    space-y-20
   `,
-  css``
+  css`
+    button {
+      ${tw`mt-12`}
+    }
+  `
 ])
