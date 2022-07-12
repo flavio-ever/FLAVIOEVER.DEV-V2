@@ -4,7 +4,12 @@ type TUlList = {
   visible: boolean
 }
 
-export const NavbarHeader = styled.header(() => [
+type TNavbarHeader = {
+  visible: boolean
+}
+
+export const NavbarHeader = styled.header<TNavbarHeader>(({ visible }) => [
+  !visible && tw`invisible`,
   tw`text-sm`,
   tw`fixed left-0 top-0 right-0 bg-purple-1 z-50`
 ])

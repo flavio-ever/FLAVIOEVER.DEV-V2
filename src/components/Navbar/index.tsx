@@ -9,10 +9,28 @@ import { IoClose } from 'react-icons/io5'
 import * as S from './styles'
 
 const Navbar: React.FC = () => {
-  const [visible, setVisible] = useState<boolean>(false)
+  const [listVisible, setListVisible] = useState<boolean>(false)
+  const [navVisible, setNavVisible] = useState<boolean>(false)
+
+  const showTeste = () => {
+    if (window.innerWidth <= 960) {
+      alert()
+    }
+  }
+
+  const showTeste2 = () => {
+    if (window.scrollY > 250) {
+      setNavVisible(false)
+    } else {
+      setNavVisible(true)
+    }
+  }
+
+  window.addEventListener('resize', showTeste)
+  window.addEventListener('scroll', showTeste2)
 
   return (
-    <S.NavbarHeader>
+    <S.NavbarHeader visible={navVisible}>
       <S.NavbarNav>
         <svg
           tw="flex space-x-6 items-center"
@@ -38,9 +56,9 @@ const Navbar: React.FC = () => {
         </svg>
         <GiHamburger
           tw="fill-current text-purple-4 cursor-pointer sm:hidden w-6 h-6"
-          onClick={() => setVisible(!visible)}
+          onClick={() => setListVisible(!listVisible)}
         />
-        <S.NavbarList visible={!visible}>
+        <S.NavbarList visible={!listVisible}>
           <S.NavbarListItem>
             <Link href="#">Sobre</Link>
           </S.NavbarListItem>
@@ -55,7 +73,7 @@ const Navbar: React.FC = () => {
           </S.NavbarListItem>
           <IoClose
             tw="fill-current text-purple-4 cursor-pointer sm:hidden absolute top-0 right-3 w-8 h-8"
-            onClick={() => setVisible(!visible)}
+            onClick={() => setListVisible(!listVisible)}
           />
         </S.NavbarList>
       </S.NavbarNav>
