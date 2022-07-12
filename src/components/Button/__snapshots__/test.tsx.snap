@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button/> should render Button 1`] = `
+.c0 {
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(255,119,0,var(--tw-border-opacity));
+  --tw-text-opacity: 1;
+  color: rgba(255,119,0,var(--tw-text-opacity));
+  border-radius: 0.375rem;
+  text-align: center;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+.c0 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.75rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.c0:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255,119,0,var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgba(255,255,255,var(--tw-text-opacity));
+}
+
+.c0 svg {
+  font-size: 1.4rem;
+}
+
+<button
+  class="c0"
+  type="button"
+>
+  Botao teste
+</button>
+`

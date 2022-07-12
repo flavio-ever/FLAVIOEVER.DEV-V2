@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
-import { RiGlobalLine, RiGithubFill } from 'react-icons/ri'
+import { RiGithubFill } from 'react-icons/ri'
+import { BiLinkExternal } from 'react-icons/bi'
 
 import * as S from './style'
 
@@ -29,15 +30,15 @@ const JobsCard: React.FC<CardProps> = ({ job, id }) => (
       <ul>
         <li>
           {job.links?.github && (
-            <a href="" target="blank">
+            <a href={job.links?.github} target="blank">
               <RiGithubFill />
             </a>
           )}
         </li>
         <li>
           {job.links?.preview && (
-            <a href="" target="blank">
-              <RiGlobalLine />
+            <a href={job.links?.preview} target="blank">
+              <BiLinkExternal />
             </a>
           )}
         </li>

@@ -1,4 +1,9 @@
-import React from 'react'
+import dynamic from 'next/dynamic'
+
+const DynamicNavbar = dynamic(() => import('../../components/Navbar'), {
+  ssr: false
+})
+
 import Image from 'next/image'
 import { IoMdDownload } from 'react-icons/io'
 import { IoMailUnreadOutline } from 'react-icons/io5'
@@ -6,7 +11,6 @@ import { IoMailUnreadOutline } from 'react-icons/io5'
 import * as S from './styles'
 
 // Components
-import Navbar from 'components/Navbar'
 import JobsTab from 'components/JobsTab'
 import Button from 'components/Button'
 import JobsCard from 'components/JobsCard'
@@ -38,7 +42,7 @@ export default function HomeTemplate() {
   return (
     <S.Main>
       {/* Navbar */}
-      <Navbar />
+      <DynamicNavbar />
 
       {/* Intro */}
       <S.IntroContainer>
