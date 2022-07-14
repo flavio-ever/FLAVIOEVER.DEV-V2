@@ -11,46 +11,26 @@ import * as S from './styles'
 const Navbar: React.FC = () => {
   const [listVisible, setListVisible] = useState<boolean>(false)
   const [navVisible, setNavVisible] = useState<boolean>(false)
-  const [oldPosicao, setOldPosicao] = useState<number>(0)
 
   const showTeste = () => {
-    // if (window.innerWidth <= 960) {
-    // }
+    if (window.innerWidth <= 960) {
+      alert()
+    }
   }
 
   const showTeste2 = () => {
-    if (window.scrollY === 0) {
+    if (window.scrollY > 250) {
       setNavVisible(false)
-    } else if (window.scrollY <= oldPosicao) {
-      setNavVisible(true)
     } else {
-      setOldPosicao(window.scrollY)
-      setNavVisible(false)
+      setNavVisible(true)
     }
-
-    // if (window.scrollY > 250) {
-    //   setNavVisible(false)
-    // } else {
-    //   setNavVisible(true)
-    // }
-
-    /**
-     * oldposicao = 0
-     * scroll = 0
-     * -
-     * oldposicao = 0
-     * scroll = 1
-     * oldposicao = 1
-     */
   }
 
   window.addEventListener('resize', showTeste)
   window.addEventListener('scroll', showTeste2)
 
-  // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
-
   return (
-    <S.NavbarHeader visible={true} fixed={navVisible}>
+    <S.NavbarHeader visible={navVisible}>
       <S.NavbarNav>
         <svg
           tw="flex space-x-6 items-center"
@@ -78,7 +58,7 @@ const Navbar: React.FC = () => {
           tw="fill-current text-purple-4 cursor-pointer sm:hidden w-6 h-6"
           onClick={() => setListVisible(!listVisible)}
         />
-        <S.NavbarList visible={!listVisible} fixed={false}>
+        <S.NavbarList visible={!listVisible}>
           <S.NavbarListItem>
             <Link href="#">Sobre</Link>
           </S.NavbarListItem>

@@ -5,17 +5,14 @@ type TUlList = {
 }
 
 type TNavbarHeader = {
-  fixed: boolean
   visible: boolean
 }
 
-export const NavbarHeader = styled.header<TNavbarHeader>(
-  ({ visible, fixed }) => [
-    !visible && tw`invisible`,
-    tw`text-sm`,
-    fixed && tw`fixed left-0 top-0 right-0 bg-purple-1 z-50`
-  ]
-)
+export const NavbarHeader = styled.header<TNavbarHeader>(({ visible }) => [
+  !visible && tw`invisible`,
+  tw`text-sm`,
+  tw`fixed left-0 top-0 right-0 bg-purple-1 z-50`
+])
 
 export const NavbarNav = styled.nav(() => [
   tw`container px-4 top-0 py-7 flex justify-between max-w-screen-xl m-auto`

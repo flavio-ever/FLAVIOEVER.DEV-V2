@@ -4,7 +4,6 @@ export const Main = styled.main(() => [
   tw`
     container
     text-purple-3
-    mt-28
   `
 ])
 
