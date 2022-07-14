@@ -11,7 +11,7 @@ const FixContent: React.FC = (props) => {
     <>
       {/* Fix Notch Apple PWA*/}
       <AppleBar />
-      <div tw="min-w-full bg-purple-1">{props.children}</div>
+      <div tw="min-w-full bg-purple-1">{props?.children}</div>
     </>
   )
 }
