@@ -78,7 +78,7 @@ const Navbar: React.FC = () => {
           tw="fill-current text-purple-4 cursor-pointer sm:hidden w-6 h-6"
           onClick={() => setListVisible(!listVisible)}
         />
-        <S.NavbarList visible={!listVisible} fixed={false}>
+        <S.NavbarList visible={!listVisible}>
           <S.NavbarListItem>
             <Link href="#">Sobre</Link>
           </S.NavbarListItem>
