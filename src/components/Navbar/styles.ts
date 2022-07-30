@@ -13,7 +13,15 @@ export const NavbarHeader = styled.header<TNavbarHeader>(
   ({ visible, fixed }) => [
     !visible && tw`invisible`,
     tw`text-sm`,
-    fixed && tw`fixed left-0 top-0 right-0 bg-purple-1 z-50`
+    tw`fixed left-0 top-0 right-0 backdrop-blur-sm bg-purple-1/80 z-50`,
+    css`
+      transition: ease-in-out 0.6s;
+      transform: translateY(-200px);
+    `,
+    fixed &&
+      css`
+        transform: translateY(0);
+      `
   ]
 )
 
@@ -22,7 +30,6 @@ export const NavbarNav = styled.nav(() => [
 ])
 
 export const NavbarList = styled.ul<TUlList>(({ visible }) => [
-  tw`bg-purple-1`,
   tw`flex flex-col sm:flex-row justify-center items-center`,
   tw`min-h-screen sm:min-h-0`,
   tw`fixed top-0 right-0 left-0 sm:static`,

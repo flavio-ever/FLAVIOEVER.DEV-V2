@@ -13,14 +13,9 @@ const Navbar: React.FC = () => {
   const [navVisible, setNavVisible] = useState<boolean>(false)
   const [oldPosicao, setOldPosicao] = useState<number>(0)
 
-  const showTeste = () => {
-    // if (window.innerWidth <= 960) {
-    // }
-  }
-
   const showTeste2 = () => {
     if (window.scrollY === 0) {
-      setNavVisible(false)
+      setNavVisible(true)
     } else if (window.scrollY <= oldPosicao) {
       setNavVisible(true)
     } else {
@@ -33,21 +28,9 @@ const Navbar: React.FC = () => {
     // } else {
     //   setNavVisible(true)
     // }
-
-    /**
-     * oldposicao = 0
-     * scroll = 0
-     * -
-     * oldposicao = 0
-     * scroll = 1
-     * oldposicao = 1
-     */
   }
 
-  window.addEventListener('resize', showTeste)
   window.addEventListener('scroll', showTeste2)
-
-  // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
 
   return (
     <S.NavbarHeader visible={true} fixed={navVisible}>
