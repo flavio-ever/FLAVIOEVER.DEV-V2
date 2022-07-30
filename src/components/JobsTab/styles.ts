@@ -74,7 +74,7 @@ export const JobsTabNavItemSelected = styled.div(
     tw`
       bg-orange-1
       absolute
-      z-50
+      z-10
       top-auto
       left-0
       w-40
