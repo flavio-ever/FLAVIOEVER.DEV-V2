@@ -36,10 +36,12 @@ export const IntroContainer = styled.section(() => [
     items-center
     justify-center
     flex-col-reverse
+    mt-36
   `,
   tw`
     sm:justify-between
     sm:flex-row
+    sm:mt-0
   `
 ])
 
