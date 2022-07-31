@@ -25,17 +25,26 @@ export const NavbarNav = styled.nav(() => [
 
 export const NavbarList = styled.ul<TUlList>(({ visible }) => [
   tw`bg-purple-1 sm:bg-purple-1/0 text-purple-3`,
-  tw`flex flex-col sm:flex-row justify-center items-center min-h-screen sm:min-h-0 fixed top-0 right-0 left-0 sm:static space-y-6 sm:flex sm:space-y-0 sm:space-x-4`,
+  tw`flex flex-col sm:flex-row justify-center items-center min-h-screen sm:min-h-0 fixed top-0 right-0 left-0 sm:static space-y-4 sm:flex sm:space-y-0 sm:space-x-4`,
   tw`transition-all duration-500 sm:transition-none`,
   css`
     ::before {
       content: '<ul>';
+
+      @media only screen and (max-width: 640px) {
+        margin: 0 0 1rem 0;
+      }
+
       margin-right: 1rem;
       color: ${theme`colors.purple.4`};
     }
     ::after {
       content: '</ul>';
       margin-left: 1rem;
+      @media only screen and (max-width: 640px) {
+        margin: 1rem 0 0 0;
+      }
+
       color: ${theme`colors.purple.4`};
     }
   `,
