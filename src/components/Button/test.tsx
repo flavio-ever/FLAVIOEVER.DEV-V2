@@ -6,6 +6,8 @@ describe('<Button/>', () => {
   it('should render Button', () => {
     const { container } = render(<Button>Botao teste</Button>)
 
+    screen.logTestingPlaygroundURL()
+
     expect(
       screen.getByRole('button', {
         name: /Botao teste/i
