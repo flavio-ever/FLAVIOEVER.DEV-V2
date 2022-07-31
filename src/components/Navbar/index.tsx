@@ -22,12 +22,6 @@ const Navbar: React.FC = () => {
       setOldPosicao(window.scrollY)
       setNavVisible(false)
     }
-
-    // if (window.scrollY > 250) {
-    //   setNavVisible(false)
-    // } else {
-    //   setNavVisible(true)
-    // }
   }
 
   window.addEventListener('scroll', showTeste2)

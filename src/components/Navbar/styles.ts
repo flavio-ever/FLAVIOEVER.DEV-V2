@@ -11,22 +11,66 @@ type TNavbarHeader = {
 
 export const NavbarHeader = styled.header<TNavbarHeader>(
   ({ visible, fixed }) => [
+    tw`
+    bg-purple-1/80
+      z-50
+      fixed
+      left-0
+      top-0
+      right-0
+      backdrop-blur-sm
+      text-sm
+      transition-all
+      duration-700
+    `,
+    tw`sm:-translate-y-28`,
     !visible && tw`invisible`,
-    tw`text-sm`,
-    tw`z-50 fixed left-0 top-0 right-0 backdrop-blur-sm bg-purple-1/80`,
-    tw`sm:-translate-y-20 transition-all duration-700`,
     fixed && tw`sm:translate-y-0`
   ]
 )
 
 export const NavbarNav = styled.nav(() => [
-  tw`container px-4 top-0 py-7 flex justify-between max-w-screen-xl m-auto`
+  tw`
+    container
+    px-4
+    top-0
+    py-7
+    flex
+    justify-between
+    max-w-screen-xl
+    m-auto
+  `
 ])
 
 export const NavbarList = styled.ul<TUlList>(({ visible }) => [
-  tw`bg-purple-1 sm:bg-purple-1/0 text-purple-3`,
-  tw`flex flex-col sm:flex-row justify-center items-center min-h-screen sm:min-h-0 fixed top-0 right-0 left-0 sm:static space-y-4 sm:flex sm:space-y-0 sm:space-x-4`,
-  tw`transition-all duration-500 sm:transition-none`,
+  tw`
+    bg-purple-1
+    sm:bg-purple-1/0
+    text-purple-3
+  `,
+  tw`
+    flex
+    flex-col
+    justify-center
+    items-center
+    min-h-screen
+    fixed
+    top-0
+    right-0
+    left-0
+    sm:static
+    space-y-4
+    transition-all
+    duration-500
+    sm:transition-none
+  `,
+  tw`
+    sm:flex
+    sm:flex-row
+    sm:space-y-0
+    sm:space-x-4
+    sm:min-h-0
+  `,
   css`
     ::before {
       content: '<ul>';
@@ -57,9 +101,16 @@ export const NavbarList = styled.ul<TUlList>(({ visible }) => [
 ])
 
 export const NavbarListItem = styled.li(() => [
-  tw`text-purple-3 hover:text-purple-3`,
-  tw`flex flex-col `,
-  tw`text-center space-y-2 transition-colors duration-200`,
+  tw`
+    text-purple-3
+    hover:text-purple-3
+    flex
+    flex-col
+    text-center
+    space-y-2
+    transition-colors
+    duration-200
+  `,
   css`
     a {
       color: ${theme`colors.purple.3`};
