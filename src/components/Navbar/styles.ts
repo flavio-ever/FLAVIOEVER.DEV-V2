@@ -6,12 +6,10 @@ type TUlList = {
 
 type TNavbarHeader = {
   fixed: boolean
-  visible: boolean
 }
 
-export const NavbarHeader = styled.header<TNavbarHeader>(
-  ({ visible, fixed }) => [
-    tw`
+export const NavbarHeader = styled.header<TNavbarHeader>(({ fixed }) => [
+  tw`
     bg-purple-1/80
       z-50
       fixed
@@ -23,11 +21,9 @@ export const NavbarHeader = styled.header<TNavbarHeader>(
       transition-all
       duration-700
     `,
-    tw`sm:-translate-y-28`,
-    !visible && tw`invisible`,
-    fixed && tw`sm:translate-y-0`
-  ]
-)
+  tw`sm:-translate-y-28`,
+  fixed && tw`sm:translate-y-0`
+])
 
 export const NavbarNav = styled.nav(() => [
   tw`

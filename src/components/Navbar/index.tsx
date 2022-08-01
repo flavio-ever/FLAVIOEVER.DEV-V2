@@ -10,7 +10,7 @@ import * as S from './styles'
 
 const Navbar: React.FC = () => {
   const [listVisible, setListVisible] = useState<boolean>(false)
-  const [navVisible, setNavVisible] = useState<boolean>(false)
+  const [navVisible, setNavVisible] = useState<boolean>(true)
   const [oldPosicao, setOldPosicao] = useState<number>(0)
 
   const showTeste2 = () => {
@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
   window.addEventListener('scroll', showTeste2)
 
   return (
-    <S.NavbarHeader visible={true} fixed={navVisible}>
+    <S.NavbarHeader fixed={navVisible}>
       <S.NavbarNav>
         <svg
           tw="flex space-x-6 items-center"
