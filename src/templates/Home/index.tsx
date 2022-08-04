@@ -15,7 +15,12 @@ import JobsTab from 'components/JobsTab'
 import Button from 'components/Button'
 import JobsCard from 'components/JobsCard'
 
-export default function HomeTemplate() {
+export type HomeTemplateProps = {
+  title: string
+  bio: string
+}
+
+export default function HomeTemplate({ title, bio }: HomeTemplateProps) {
   const jobs = [
     {
       title: 'Itadori',
@@ -48,16 +53,10 @@ export default function HomeTemplate() {
       <S.IntroContainer>
         <S.IntroDescricaoContent>
           <S.IntroDot />
-          <S.IntroDescricaoTitulo>
-            Olá! Sou o <span>Flavio Everton</span>
-            <br />
-            Eu construo coisas para web.
-          </S.IntroDescricaoTitulo>
-          <S.IntroDescricaoSubTitulo>
-            Sou um desenvolvedor de software especializado em construir
-            aplicações e experiências digitais incríveis! Atualmente, estou
-            trabalhando com integrações B2B e B2C na @Infracommerce.
-          </S.IntroDescricaoSubTitulo>
+          <S.IntroDescricaoTitulo dangerouslySetInnerHTML={{ __html: title }} />
+          <S.IntroDescricaoSubTitulo
+            dangerouslySetInnerHTML={{ __html: bio }}
+          />
         </S.IntroDescricaoContent>
         <S.IntroImagemContent>
           <Image
