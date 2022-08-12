@@ -98,7 +98,7 @@ export default function HomeTemplate({
         </p>
         <Button>
           <IoMailUnreadOutline />
-          <p>Deixe seu h3ll0 w0rld!</p>
+          <a href="mailto:eu@flavioever.dev">Deixe seu h3ll0 w0rld!</a>
         </Button>
       </S.ContatoContainer>
     </S.Main>
