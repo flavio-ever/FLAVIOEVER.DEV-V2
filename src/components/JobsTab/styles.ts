@@ -51,10 +51,10 @@ export const JobsTabNavItem = styled.div(
   ({ isActive = false }: TJobsTabNavItem) => [
     tw`
       flex
-      items-center
+      place-items-center
+      h-16
+      min-w-[13rem]
       w-40
-      h-12
-      min-w-[10rem]
       pl-5
       pr-5
       text-purple-4
@@ -63,7 +63,7 @@ export const JobsTabNavItem = styled.div(
     `,
     tw`
       sm:h-12
-      sm:w-40
+      sm:w-52
       `,
     isActive && tw`text-orange-1`
   ]
@@ -77,7 +77,7 @@ export const JobsTabNavItemSelected = styled.div(
       z-10
       top-auto
       left-0
-      w-40
+      w-52
       h-1
     `,
     tw`
@@ -89,13 +89,13 @@ export const JobsTabNavItemSelected = styled.div(
       transition-delay: 0.1s;
       transform: translateY(calc(${activeTabId} * 3rem));
       @media (max-width: 640px) {
-        transform: translateX(calc(${activeTabId} * 10rem));
+        transform: translateX(calc(${activeTabId} * 13rem));
       }
     `
   ]
 )
 
-export const JobsTabPanels = styled.section(() => [tw`sm:w-full`])
+export const JobsTabPanels = styled.section(() => [tw`sm:w-full min-h-[13rem]`])
 
 export const JobsTabPanelDescription = styled.article(() => [
   css`

@@ -5,9 +5,45 @@ export const GET_AUTHOR = gql`
     authors(first: $first) {
       id
       title
-      bio {
+      smallBio {
         html
       }
+      largeBio {
+        html
+      }
+      downloadUrl
+    }
+  }
+`
+export const GET_JOBS = gql`
+  query getJobs() {
+    jobs(orderBy: startDate_DESC) {
+      id
+      company
+      occupation
+      startDate
+      endDate
+      url
+      description {
+        html
+      }
+    }
+  }
+`
+
+export const GET_PROJECTS = gql`
+  query getProjects {
+    projects {
+      id
+      title
+      description {
+        html
+      }
+      image {
+        url
+      }
+      github
+      demo
     }
   }
 `

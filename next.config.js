@@ -14,10 +14,6 @@ module.exports = withPWA({
   },
   // https://nextjs.org/docs/basic-features/image-optimization#domains
   images: {
-    domains: [
-      'media.graphcms.com',
-      'blog-geek-midia.s3.amazonaws.com',
-      'media.sketchfab.com'
-    ]
+    domains: ['media.graphcms.com', 'media.graphassets.com']
   }
 })

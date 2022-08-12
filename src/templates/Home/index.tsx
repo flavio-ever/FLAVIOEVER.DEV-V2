@@ -11,39 +11,28 @@ import { IoMailUnreadOutline } from 'react-icons/io5'
 import * as S from './styles'
 
 // Components
-import JobsTab from 'components/JobsTab'
 import Button from 'components/Button'
-import JobsCard from 'components/JobsCard'
+import JobsTab, { JobsProps } from 'components/JobsTab'
+import ProjectCard, { ProjectProps } from 'components/ProjectCard'
 
-export type HomeTemplateProps = {
+export type AuthorProps = {
   title: string
-  bio: string
+  smartBio: string
+  largeBio: string
+  downloadUrl: string
 }
 
-export default function HomeTemplate({ title, bio }: HomeTemplateProps) {
-  const jobs = [
-    {
-      title: 'Itadori',
-      image: '/img/itadori.jpg',
-      description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, libero odit eligendi suscipit sunt fuga molestias rem! Odit nesciunt sed rem, nostrum a assumenda? Maxime suscipit eveniet officia eum placeat. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, libero odit eligendi suscipit sunt fuga molestias rem! Odit nesciunt sed rem, nostrum a assumenda? Maxime suscipit eveniet officia   eum placeat.',
-      links: {
-        preview: 'http://google.com.br',
-        github: 'http://github.com/flavio-ever'
-      }
-    },
-    {
-      title: 'Umbrella',
-      image: '/img/umbrella.jpg',
-      description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, libero odit eligendi suscipit sunt fuga molestias rem! Odit nesciunt sed rem, nostrum a assumenda? Maxime suscipit eveniet officia eum placeat. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, libero odit eligendi suscipit sunt fuga molestias rem! Odit nesciunt sed rem, nostrum a assumenda? Maxime suscipit eveniet officia   eum placeat.',
-      links: {
-        preview: 'http://google.com.br',
-        github: 'http://github.com/flavio-ever'
-      }
-    }
-  ]
+export type HomeTemplateProps = {
+  authorProps: AuthorProps
+  jobsProps: JobsProps[]
+  projectsProps: ProjectProps[]
+}
 
+export default function HomeTemplate({
+  authorProps,
+  jobsProps,
+  projectsProps
+}: HomeTemplateProps) {
   return (
     <S.Main>
       {/* Navbar */}
@@ -53,9 +42,11 @@ export default function HomeTemplate({ title, bio }: HomeTemplateProps) {
       <S.IntroContainer>
         <S.IntroDescricaoContent>
           <S.IntroDot />
-          <S.IntroDescricaoTitulo dangerouslySetInnerHTML={{ __html: title }} />
+          <S.IntroDescricaoTitulo
+            dangerouslySetInnerHTML={{ __html: authorProps?.title }}
+          />
           <S.IntroDescricaoSubTitulo
-            dangerouslySetInnerHTML={{ __html: bio }}
+            dangerouslySetInnerHTML={{ __html: authorProps?.smartBio }}
           />
         </S.IntroDescricaoContent>
         <S.IntroImagemContent>
@@ -71,35 +62,29 @@ export default function HomeTemplate({ title, bio }: HomeTemplateProps) {
       {/* SobreMim */}
       <S.SobreMimContainer>
         <S.Title>sobre_mim</S.Title>
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda,
-          libero odit eligendi suscipit sunt fuga molestias rem! Odit nesciunt
-          sed rem, nostrum a assumenda? Maxime suscipit eveniet officia eum
-          placeat. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          Assumenda, libero odit eligendi suscipit sunt fuga molestias rem! Odit
-          nesciunt sed rem, nostrum a assumenda? Maxime suscipit eveniet officia
-          eum placeat.
+        <div>
+          <div dangerouslySetInnerHTML={{ __html: authorProps?.largeBio }} />
           <br />
-          <br />
-          <br />
-          <Button>
-            <IoMdDownload />
-            <p>Baixar meu cv</p>
-          </Button>
-        </p>
+          <a href={authorProps?.downloadUrl} target="blank">
+            <Button>
+              <IoMdDownload />
+              <p>Baixar meu cv</p>
+            </Button>
+          </a>
+        </div>
       </S.SobreMimContainer>
 
       {/* Experiencias */}
       <S.ExperienciasContainer>
         <S.Title>experiencias</S.Title>
-        <JobsTab />
+        <JobsTab jobsProps={jobsProps} />
       </S.ExperienciasContainer>
 
       {/* Trabalhos */}
       <S.TrabalhosContainer>
-        <S.Title>trabalhos</S.Title>
-        {jobs.map((job, key) => (
-          <JobsCard key={key} job={job} id={key + 1} />
+        <S.Title>projetos</S.Title>
+        {projectsProps.map((job, key) => (
+          <ProjectCard key={key} project={job} id={key + 1} />
         ))}
       </S.TrabalhosContainer>
 
