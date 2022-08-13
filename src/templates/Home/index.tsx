@@ -96,10 +96,12 @@ export default function HomeTemplate({
           convidado para entrar em contato comigo. Quando puder, prometo
           responder.
         </p>
-        <Button>
-          <IoMailUnreadOutline />
-          <a href="mailto:eu@flavioever.dev">Deixe seu h3ll0 w0rld!</a>
-        </Button>
+        <a href="mailto:eu@flavioever.dev">
+          <Button>
+            <IoMailUnreadOutline />
+            Deixe seu h3ll0 w0rld!
+          </Button>
+        </a>
       </S.ContatoContainer>
     </S.Main>
   )

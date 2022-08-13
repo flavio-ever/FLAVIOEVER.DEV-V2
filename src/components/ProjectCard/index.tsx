@@ -24,9 +24,11 @@ type JobsCardProps = {
 }
 
 export default function ProjectCard({ project, id }: JobsCardProps) {
+  const evenOrOdd = id % 2 === 0
+
   return (
-    <S.Container>
-      <S.InfoWrap>
+    <S.Container evenOrOdd={evenOrOdd}>
+      <S.InfoWrap evenOrOdd={evenOrOdd}>
         <h1>0{id}</h1>
 
         <S.Description>

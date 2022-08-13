@@ -25,7 +25,6 @@ export const getStaticProps: GetStaticProps = async () => {
   const { authors } = await client.request(GET_AUTHOR, { first: 1 })
   const { jobs } = await client.request(GET_JOBS)
   const { projects } = await client.request(GET_PROJECTS)
-  console.log(projects)
 
   return {
     props: {

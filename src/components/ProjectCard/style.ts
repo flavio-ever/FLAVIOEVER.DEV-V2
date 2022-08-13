@@ -1,30 +1,32 @@
 import styled from 'styled-components'
 import tw, { css, theme } from 'twin.macro'
 
-export const Container = styled.div(() => [
+type ContainerProps = {
+  evenOrOdd: boolean
+}
+
+export const Container = styled.div<ContainerProps>(({ evenOrOdd }) => [
   tw`
     flex
     justify-center
+
     w-full
     relative
     m-5
     `,
-  tw`
-  `,
-  css`
-    * {
-      //border: 1px solid red;
-    }
-  `
+  !evenOrOdd && tw`flex-row-reverse`
 ])
 
-export const InfoWrap = styled.div(() => [
+type InfoWrapProps = {
+  evenOrOdd: boolean
+}
+
+export const InfoWrap = styled.div<InfoWrapProps>(({ evenOrOdd }) => [
   tw`
     flex
     flex-col
 
     justify-between
-
 
     absolute
     z-10
@@ -35,23 +37,24 @@ export const InfoWrap = styled.div(() => [
   `,
   tw`
     sm:w-2/6
-    md:w-3/6
+    md:w-4/6
 
     sm:bg-purple-1/0
     sm:p-0
     sm:relative
-    sm:pr-10
-
+    sm:pr-14
   `,
+  !evenOrOdd && tw`sm:pr-0 sm:pl-14`,
   css`
     h1 {
       ${tw`text-purple-2 text-6xl relative`};
+      ${!evenOrOdd && tw`text-right`};
 
       ::after {
         content: '';
+        ${!evenOrOdd ? `right: 5rem;` : `left: 5rem;`}
         border-bottom: 1px solid rgb(250, 250, 250, 0.1);
         width: calc(100% - 5rem);
-        left: 5rem;
         position: absolute;
         top: 50%;
       }
@@ -110,7 +113,7 @@ export const ImageWrap = styled.div(() => [
   `,
   tw`
     sm:w-4/6
-    md:w-4/6
+    md:w-2/6
     sm:max-w-[31.25rem]
     sm:max-h-[22.5rem]
     `,
