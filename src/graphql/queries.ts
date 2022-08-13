@@ -47,3 +47,15 @@ export const GET_PROJECTS = gql`
     }
   }
 `
+
+export const GET_CONTACT = gql`
+  query getContact {
+    contacts {
+      id
+      description {
+        html
+      }
+      contactUrl
+    }
+  }
+`

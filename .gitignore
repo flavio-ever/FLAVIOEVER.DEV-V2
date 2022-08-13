@@ -35,3 +35,7 @@ yarn-error.log*
 
 # env
 .env
+
+# build nextjs
+public/sw*
+public/workbox-*

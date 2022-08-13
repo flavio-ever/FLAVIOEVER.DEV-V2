@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import dynamic from 'next/dynamic'
 
 const DynamicNavbar: any = dynamic(() => import('../../components/Navbar'), {
@@ -22,87 +23,114 @@ export type AuthorProps = {
   downloadUrl: string
 }
 
+export type ContactProps = {
+  description: string
+  contactUrl: string
+}
+
 export type HomeTemplateProps = {
   authorProps: AuthorProps
   jobsProps: JobsProps[]
   projectsProps: ProjectProps[]
+  contactProps: ContactProps
 }
 
 export default function HomeTemplate({
   authorProps,
   jobsProps,
-  projectsProps
+  projectsProps,
+  contactProps
 }: HomeTemplateProps) {
+  const refs = {
+    homeRef: useRef<null | HTMLDivElement>(null),
+    sobreRef: useRef<null | HTMLDivElement>(null),
+    experienciasRef: useRef<null | HTMLDivElement>(null),
+    projetosRef: useRef<null | HTMLDivElement>(null),
+    contatoRef: useRef<null | HTMLDivElement>(null)
+  }
+
+  function handleScrollRef(ref: any) {
+    ref?.current?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
     <S.Main>
       {/* Navbar */}
-      <DynamicNavbar />
+      <DynamicNavbar refs={refs} handleScrollRef={handleScrollRef} />
 
       {/* Intro */}
-      <S.IntroContainer>
-        <S.IntroDescricaoContent>
-          <S.IntroDot />
-          <S.IntroDescricaoTitulo
-            dangerouslySetInnerHTML={{ __html: authorProps?.title }}
-          />
-          <S.IntroDescricaoSubTitulo
-            dangerouslySetInnerHTML={{ __html: authorProps?.smartBio }}
-          />
-        </S.IntroDescricaoContent>
-        <S.IntroImagemContent>
-          <Image
-            layout="intrinsic"
-            width={545}
-            height={681}
-            src="/img/eu_avatar_overlay.png"
-          />
-        </S.IntroImagemContent>
-      </S.IntroContainer>
+      {authorProps?.title && authorProps?.smartBio && (
+        <S.IntroContainer ref={refs.homeRef}>
+          <S.IntroDescricaoContent>
+            <S.IntroDot />
+            <S.IntroDescricaoTitulo
+              dangerouslySetInnerHTML={{ __html: authorProps?.title }}
+            />
+            <S.IntroDescricaoSubTitulo
+              dangerouslySetInnerHTML={{ __html: authorProps?.smartBio }}
+            />
+          </S.IntroDescricaoContent>
+          <S.IntroImagemContent>
+            <Image
+              layout="intrinsic"
+              width={545}
+              height={681}
+              src="/img/eu_avatar_overlay.png"
+            />
+          </S.IntroImagemContent>
+        </S.IntroContainer>
+      )}
 
       {/* SobreMim */}
-      <S.SobreMimContainer>
-        <S.Title>sobre_mim</S.Title>
-        <div>
-          <div dangerouslySetInnerHTML={{ __html: authorProps?.largeBio }} />
-          <br />
-          <a href={authorProps?.downloadUrl} target="blank">
-            <Button>
-              <IoMdDownload />
-              <p>Baixar meu cv</p>
-            </Button>
-          </a>
-        </div>
-      </S.SobreMimContainer>
+      {authorProps?.largeBio && authorProps?.downloadUrl && (
+        <S.SobreMimContainer ref={refs.sobreRef}>
+          <S.Title>sobre_mim</S.Title>
+          <div>
+            <div dangerouslySetInnerHTML={{ __html: authorProps?.largeBio }} />
+            <br />
+            <a href={authorProps?.downloadUrl} target="blank">
+              <Button>
+                <IoMdDownload />
+                <p>Baixar meu cv</p>
+              </Button>
+            </a>
+          </div>
+        </S.SobreMimContainer>
+      )}
 
       {/* Experiencias */}
-      <S.ExperienciasContainer>
-        <S.Title>experiencias</S.Title>
-        <JobsTab jobsProps={jobsProps} />
-      </S.ExperienciasContainer>
+      {jobsProps.length && (
+        <S.ExperienciasContainer ref={refs.experienciasRef}>
+          <S.Title>experiencias</S.Title>
+          <JobsTab jobsProps={jobsProps} />
+        </S.ExperienciasContainer>
+      )}
 
-      {/* Trabalhos */}
-      <S.TrabalhosContainer>
-        <S.Title>projetos</S.Title>
-        {projectsProps.map((job, key) => (
-          <ProjectCard key={key} project={job} id={key + 1} />
-        ))}
-      </S.TrabalhosContainer>
+      {/* Projetos */}
+      {projectsProps.length && (
+        <S.TrabalhosContainer ref={refs.projetosRef}>
+          <S.Title>projetos</S.Title>
+          {projectsProps.map((job, key) => (
+            <ProjectCard key={key} project={job} id={key + 1} />
+          ))}
+        </S.TrabalhosContainer>
+      )}
 
       {/* Contato */}
-      <S.ContatoContainer>
-        <S.Title>contato</S.Title>
-        <p>
-          Embora eu não esteja procurando novas oportunidades, você está
-          convidado para entrar em contato comigo. Quando puder, prometo
-          responder.
-        </p>
-        <a href="mailto:eu@flavioever.dev">
-          <Button>
-            <IoMailUnreadOutline />
-            <span>Deixe seu h3ll0 w0rld!</span>
-          </Button>
-        </a>
-      </S.ContatoContainer>
+      {contactProps?.description && contactProps.contactUrl && (
+        <S.ContatoContainer ref={refs.contatoRef}>
+          <S.Title>contato</S.Title>
+          <div
+            dangerouslySetInnerHTML={{ __html: contactProps?.description }}
+          />
+          <a href={contactProps.contactUrl} target={'_blank'} rel="noreferrer">
+            <Button>
+              <IoMailUnreadOutline />
+              <span>Deixe seu h3ll0 w0rld!</span>
+            </Button>
+          </a>
+        </S.ContatoContainer>
+      )}
     </S.Main>
   )
 }

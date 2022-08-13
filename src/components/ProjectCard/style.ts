@@ -5,6 +5,10 @@ type ContainerProps = {
   evenOrOdd: boolean
 }
 
+type InfoWrapProps = {
+  evenOrOdd: boolean
+}
+
 export const Container = styled.div<ContainerProps>(({ evenOrOdd }) => [
   tw`
     flex
@@ -16,10 +20,6 @@ export const Container = styled.div<ContainerProps>(({ evenOrOdd }) => [
     `,
   !evenOrOdd && tw`flex-row-reverse`
 ])
-
-type InfoWrapProps = {
-  evenOrOdd: boolean
-}
 
 export const InfoWrap = styled.div<InfoWrapProps>(({ evenOrOdd }) => [
   tw`
@@ -48,7 +48,7 @@ export const InfoWrap = styled.div<InfoWrapProps>(({ evenOrOdd }) => [
   css`
     h1 {
       ${tw`text-purple-2 text-6xl relative`};
-      ${!evenOrOdd && tw`text-right`};
+      ${!evenOrOdd && tw`sm:text-right`};
 
       ::after {
         content: '';
