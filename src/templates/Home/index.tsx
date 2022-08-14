@@ -1,11 +1,11 @@
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
+
 import dynamic from 'next/dynamic'
 
 const DynamicNavbar: any = dynamic(() => import('../../components/Navbar'), {
   ssr: false
 })
 
-import Image from 'next/image'
 import { IoMdDownload } from 'react-icons/io'
 import { IoMailUnreadOutline } from 'react-icons/io5'
 
@@ -15,6 +15,9 @@ import * as S from './styles'
 import Button from 'components/Button'
 import JobsTab, { JobsProps } from 'components/JobsTab'
 import ProjectCard, { ProjectProps } from 'components/ProjectCard'
+
+// Sections components
+import IntroSection from 'components/Sections/Intro'
 
 export type AuthorProps = {
   title: string
@@ -53,32 +56,22 @@ export default function HomeTemplate({
     ref?.current?.scrollIntoView({ behavior: 'smooth' })
   }
 
+  useEffect(() => {
+    //scrollReveal()
+  }, [])
+
   return (
     <S.Main>
       {/* Navbar */}
       <DynamicNavbar refs={refs} handleScrollRef={handleScrollRef} />
 
       {/* Intro */}
-      {authorProps?.title && authorProps?.smartBio && (
-        <S.IntroContainer ref={refs.homeRef}>
-          <S.IntroDescricaoContent>
-            <S.IntroDot />
-            <S.IntroDescricaoTitulo
-              dangerouslySetInnerHTML={{ __html: authorProps?.title }}
-            />
-            <S.IntroDescricaoSubTitulo
-              dangerouslySetInnerHTML={{ __html: authorProps?.smartBio }}
-            />
-          </S.IntroDescricaoContent>
-          <S.IntroImagemContent>
-            <Image
-              layout="intrinsic"
-              width={545}
-              height={681}
-              src="/img/eu_avatar_overlay.png"
-            />
-          </S.IntroImagemContent>
-        </S.IntroContainer>
+      {authorProps && (
+        <IntroSection
+          title={authorProps.title}
+          smartBio={authorProps.smartBio}
+          ref={refs.homeRef}
+        />
       )}
 
       {/* SobreMim */}

@@ -1,4 +1,3 @@
-import React from 'react'
 import Image from 'next/image'
 import { RiGithubFill } from 'react-icons/ri'
 import { BiLinkExternal } from 'react-icons/bi'
