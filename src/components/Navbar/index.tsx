@@ -6,36 +6,20 @@ import { IoClose } from 'react-icons/io5'
 
 import * as S from './styles'
 
-type RefsProps = {
-  homeRef: null | HTMLDivElement
-  sobreRef: null | HTMLDivElement
-  experienciasRef: null | HTMLDivElement
-  projetosRef: null | HTMLDivElement
-  contatoRef: null | HTMLDivElement
-}
-
-export type NavbarProps = {
-  refs: RefsProps
-  handleScrollRef(ref: any): void
-}
-
-const Navbar: React.FC<NavbarProps> = ({ handleScrollRef, refs }) => {
+const Navbar: React.FC<any> = () => {
   const [listVisible, setListVisible] = useState<boolean>(false)
   const [navVisible, setNavVisible] = useState<boolean>(true)
-  const [oldPosicao, setOldPosicao] = useState<number>(0)
 
-  const showNavBar = () => {
-    if (window.scrollY === 0) {
-      setNavVisible(true)
-    } else if (window.scrollY <= oldPosicao) {
-      setNavVisible(true)
-    } else {
-      setOldPosicao(window.scrollY)
-      setNavVisible(false)
-    }
+  if (typeof window !== 'undefined') {
+    const container = document.querySelectorAll('.has-scroll-smooth')[0]
+    container?.addEventListener('wheel', (event: any) => {
+      if (event?.deltaY > 0) {
+        setNavVisible(false)
+      } else {
+        setNavVisible(true)
+      }
+    })
   }
-
-  window.addEventListener('scroll', showNavBar)
 
   return (
     <S.NavbarHeader fixed={navVisible}>
@@ -68,27 +52,29 @@ const Navbar: React.FC<NavbarProps> = ({ handleScrollRef, refs }) => {
         />
         <S.NavbarList visible={!listVisible}>
           <S.NavbarListItem>
-            <button onClick={() => handleScrollRef(refs.homeRef)}>Home</button>
+            <a href="#section-home" data-scroll-to>
+              Home
+            </a>
           </S.NavbarListItem>
           <S.NavbarListItem>
-            <button onClick={() => handleScrollRef(refs.sobreRef)}>
-              Sobre
-            </button>
+            <a href="#section-about-me" data-scroll-to>
+              Sobre mim
+            </a>
           </S.NavbarListItem>
           <S.NavbarListItem>
-            <button onClick={() => handleScrollRef(refs.experienciasRef)}>
+            <a href="#section-experiences" data-scroll-to>
               Experiencias
-            </button>
+            </a>
           </S.NavbarListItem>
           <S.NavbarListItem>
-            <button onClick={() => handleScrollRef(refs.projetosRef)}>
+            <a href="#section-projects" data-scroll-to>
               Projetos
-            </button>
+            </a>
           </S.NavbarListItem>
           <S.NavbarListItem>
-            <button onClick={() => handleScrollRef(refs.contatoRef)}>
+            <a href="#section-contact" data-scroll-to>
               Contato
-            </button>
+            </a>
           </S.NavbarListItem>
           <IoClose
             tw="fill-current text-purple-4 cursor-pointer sm:hidden absolute top-0 right-3 w-8 h-8"

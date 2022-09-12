@@ -1,57 +1,45 @@
-import { forwardRef, useEffect } from 'react'
-
 import * as S from './style'
 import Image from 'next/image'
+import { useLocomotiveScroll } from 'react-locomotive-scroll'
+import React from 'react'
 
-type IntroProps = {
+type IntroSectionProps = {
   title: string
   smartBio: string
 }
 
-export default forwardRef(function IntroSection(
-  { title, smartBio }: IntroProps,
-  ref: any
-) {
-  useEffect(() => {
-    ;(async () => {
-      if (ref?.current) {
-        const sr = (await import('scrollreveal')).default
-        sr().reveal(ref?.current, {
-          delay: 0,
-          distance: '0px',
-          duration: 5000,
-          easing: 'cubic-bezier(0.5, 0, 0, 1)',
-          interval: 0,
-          opacity: 0,
-          origin: 'bottom',
-          rotate: {
-            x: 0,
-            y: 0,
-            z: 0
-          },
-          scale: 1
-        })
-      }
-    })()
-  }, [ref])
+const IntroSection = React.forwardRef(
+  ({ title, smartBio }: IntroSectionProps, ref: any) => {
+    const { scroll } = useLocomotiveScroll()
 
-  return (
-    <S.IntroContainer ref={ref}>
-      <S.IntroDescricaoContent>
-        <S.IntroDot />
-        <S.IntroDescricaoTitulo dangerouslySetInnerHTML={{ __html: title }} />
-        <S.IntroDescricaoSubTitulo
-          dangerouslySetInnerHTML={{ __html: smartBio }}
-        />
-      </S.IntroDescricaoContent>
-      <S.IntroImagemContent>
-        <Image
-          layout="intrinsic"
-          width={545}
-          height={681}
-          src="/img/eu_avatar_overlay.png"
-        />
-      </S.IntroImagemContent>
-    </S.IntroContainer>
-  )
-})
+    return (
+      <S.IntroContainer ref={ref} data-scroll-section id="section-home">
+        <S.IntroDescricaoContent
+          data-scroll
+          data-scroll-direction="horizontal"
+          data-scroll-speed="6"
+        >
+          <S.IntroDot />
+          <S.IntroDescricaoTitulo dangerouslySetInnerHTML={{ __html: title }} />
+          <S.IntroDescricaoSubTitulo
+            dangerouslySetInnerHTML={{ __html: smartBio }}
+          />
+        </S.IntroDescricaoContent>
+        <S.IntroImagemContent
+          data-scroll
+          data-scroll-direction="horizontal"
+          data-scroll-speed="-6"
+        >
+          <Image
+            layout="intrinsic"
+            width={545}
+            height={681}
+            src="/img/eu_avatar_overlay.png"
+          />
+        </S.IntroImagemContent>
+      </S.IntroContainer>
+    )
+  }
+)
+
+export default IntroSection

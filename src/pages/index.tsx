@@ -1,8 +1,5 @@
-import React from 'react'
 import { GetStaticProps } from 'next'
-
 import client from 'graphql/client'
-
 import HomeTemplate, { HomeTemplateProps } from '../templates/Home'
 
 import {
@@ -11,7 +8,6 @@ import {
   GET_JOBS,
   GET_PROJECTS
 } from 'graphql/queries'
-import { useRouter } from 'next/router'
 
 export default function HomePage({
   authorProps,
@@ -19,11 +15,6 @@ export default function HomePage({
   projectsProps,
   contactProps
 }: HomeTemplateProps) {
-  const router = useRouter()
-
-  // retorna loading enquanto está sendo criado
-  if (router.isFallback) return null
-
   return (
     <HomeTemplate
       authorProps={authorProps}
