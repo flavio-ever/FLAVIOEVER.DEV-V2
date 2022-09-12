@@ -1,6 +1,6 @@
 import 'twin.macro'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { GiHamburger } from 'react-icons/gi'
 import { IoClose } from 'react-icons/io5'
 
@@ -9,8 +9,13 @@ import * as S from './styles'
 const Navbar: React.FC<any> = () => {
   const [listVisible, setListVisible] = useState<boolean>(false)
   const [navVisible, setNavVisible] = useState<boolean>(true)
+  const [isBrowser, setIsBrowser] = useState(false)
 
-  if (typeof window !== 'undefined') {
+  useEffect(() => {
+    setIsBrowser(typeof window !== 'undefined')
+  }, [])
+
+  if (isBrowser) {
     const container = document.querySelectorAll('.has-scroll-smooth')[0]
     container?.addEventListener('wheel', (event: any) => {
       if (event?.deltaY > 0) {

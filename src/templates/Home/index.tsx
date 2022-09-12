@@ -55,7 +55,7 @@ export default function HomeTemplate({
             direction: 'vertical'
           },
           smartphone: {
-            smooth: true,
+            smooth: false,
             direction: 'vertical'
           }
           // ... all available Locomotive Scroll instance options
