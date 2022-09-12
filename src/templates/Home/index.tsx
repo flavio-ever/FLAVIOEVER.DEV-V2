@@ -14,6 +14,7 @@ import Navbar from '../../components/Navbar'
 import IntroSection from 'components/Sections/Intro'
 import AboutMeSection from 'components/Sections/AboutMe'
 import ExperiencesSection from 'components/Sections/Experiences'
+import ProjectSection from 'components/Sections/Projects'
 
 export type AuthorProps = {
   title: string
@@ -94,12 +95,7 @@ export default function HomeTemplate({
           )}
           {/* Projetos */}
           {projectsProps.length && (
-            <S.TrabalhosContainer data-scroll-section id="section-projects">
-              <S.Title>projetos</S.Title>
-              {projectsProps.map((job, key) => (
-                <ProjectCard key={key} project={job} id={key + 1} />
-              ))}
-            </S.TrabalhosContainer>
+            <ProjectSection title="Projetos" projectsProps={projectsProps} />
           )}
           {/* Contato */}
           {contactProps?.description && contactProps.contactUrl && (

@@ -6,7 +6,7 @@ import tw, { styled, css, theme } from 'twin.macro'
 
 export const IntroContainer = styled.section(() => [
   tw`
-    h-screen
+    min-h-[100vh]
     flex
     items-center
     justify-center

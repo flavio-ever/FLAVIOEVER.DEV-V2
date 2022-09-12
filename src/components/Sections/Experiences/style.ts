@@ -10,7 +10,7 @@ export const ExperienciasContainer = styled.section(() => [
     items-center
     justify-center
 
-    min-h-[50vh]
+    min-h-[100vh]
   `,
   tw`
     sm:space-y-20
