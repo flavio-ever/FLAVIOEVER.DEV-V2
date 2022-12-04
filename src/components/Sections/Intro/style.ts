@@ -2,17 +2,15 @@ import tw, { styled, css, theme } from 'twin.macro'
 
 export const IntroContainer = styled.section(() => [
   tw`
-    min-h-[100vh]
     flex
     items-center
     justify-center
     flex-col-reverse
-    mt-36
   `,
   tw`
     sm:justify-between
     sm:flex-row
-    sm:mt-0
+    mt-32
   `
 ])
 

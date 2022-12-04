@@ -7,7 +7,7 @@ export const SobreMimContainer = styled.section(() => [
     items-center
     justify-center
 
-    min-h-[100vh]
+    min-h-[50vh]
   `,
   tw`
     sm:space-y-20

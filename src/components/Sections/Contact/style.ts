@@ -9,7 +9,7 @@ export const ContatoContainer = styled.section(() => [
     mb-20
     text-center
 
-    min-h-[100vh]
+    min-h-[50vh]
   `,
   tw`
   `,
