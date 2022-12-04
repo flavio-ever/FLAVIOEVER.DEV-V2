@@ -1,28 +1,31 @@
+import React from 'react'
 import { IoMdDownload } from 'react-icons/io'
+
 import * as S from './style'
 import * as Home from '../../../templates/Home/styles'
 import Button from 'components/Button'
-import { useLocomotiveScroll } from 'react-locomotive-scroll'
-import React from 'react'
+
+export type AboutMeProps = {
+  downloadUrl: string
+  largeBio: string
+  title: string
+}
 
 type AboutMeSectionProps = {
-  largeBio: string
-  downloadUrl: string
+  aboutMeProps: AboutMeProps
   title: string
 }
 
 const AboutMeSection = React.forwardRef(
-  ({ title, largeBio, downloadUrl }: AboutMeSectionProps, ref: any) => {
-    const { scroll } = useLocomotiveScroll()
-
+  ({ title, aboutMeProps }: AboutMeSectionProps, ref: any) => {
     return (
-      <S.SobreMimContainer ref={ref} data-scroll-section id="section-about-me">
-        <div data-scroll data-scroll-speed="3" data-scroll-position="top">
+      <S.SobreMimContainer ref={ref} id="section-about-me">
+        <div>
           <Home.Title>{title}</Home.Title>
           <div>
-            <div dangerouslySetInnerHTML={{ __html: largeBio }} />
+            <div dangerouslySetInnerHTML={{ __html: aboutMeProps.largeBio }} />
             <br />
-            <a href={downloadUrl} target="blank">
+            <a href={aboutMeProps.downloadUrl} target="blank">
               <Button>
                 <IoMdDownload />
                 <p>Baixar meu cv</p>

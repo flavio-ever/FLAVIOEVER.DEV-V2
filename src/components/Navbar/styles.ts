@@ -40,8 +40,6 @@ export const NavbarNav = styled.nav(() => [
 
 export const NavbarList = styled.ul<TUlList>(({ visible }) => [
   tw`
-    backdrop-blur-sm
-    sm:backdrop-blur-0
     bg-purple-1/95
     sm:bg-purple-1/10
     text-purple-3

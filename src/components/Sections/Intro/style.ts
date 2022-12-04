@@ -1,9 +1,5 @@
 import tw, { styled, css, theme } from 'twin.macro'
 
-/**
- * SECTION: Intro
- */
-
 export const IntroContainer = styled.section(() => [
   tw`
     min-h-[100vh]

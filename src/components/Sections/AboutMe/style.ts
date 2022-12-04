@@ -1,8 +1,5 @@
 import tw, { styled } from 'twin.macro'
 
-/**
- * SECTION: SobreMim
- */
 export const SobreMimContainer = styled.section(() => [
   tw`
     flex

@@ -1,24 +1,20 @@
-import * as S from './style'
-import { useLocomotiveScroll } from 'react-locomotive-scroll'
 import React from 'react'
+
+import * as S from './style'
 import JobsTab, { JobsProps } from 'components/JobsTab'
 import * as Home from 'templates/Home/styles'
 
+export type ExperiencesProps = JobsProps
+
 type ExperiencesSectionProps = {
-  jobsProps: JobsProps[]
+  jobsProps: ExperiencesProps[]
   title: string
 }
 
 const ExperiencesSection = React.forwardRef(
   ({ title, jobsProps }: ExperiencesSectionProps, ref: any) => {
-    const { scroll } = useLocomotiveScroll()
-
     return (
-      <S.ExperienciasContainer
-        data-scroll-section
-        id="section-experiences"
-        ref={ref}
-      >
+      <S.ExperienciasContainer id="section-experiences" ref={ref}>
         <Home.Title>{title}</Home.Title>
         <JobsTab jobsProps={jobsProps} />
       </S.ExperienciasContainer>

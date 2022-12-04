@@ -1,28 +1,31 @@
+import React from 'react'
 import * as S from './style'
 import Image from 'next/image'
-import { useLocomotiveScroll } from 'react-locomotive-scroll'
-import React from 'react'
 
-type IntroSectionProps = {
+export type IntroProps = {
   title: string
   smartBio: string
 }
 
-const IntroSection = React.forwardRef(
-  ({ title, smartBio }: IntroSectionProps, ref: any) => {
-    const { scroll } = useLocomotiveScroll()
+type IntroSectionProps = {
+  introProps: IntroProps
+}
 
+const IntroSection = React.forwardRef(
+  ({ introProps }: IntroSectionProps, ref: any) => {
     return (
-      <S.IntroContainer ref={ref} data-scroll-section id="section-home">
+      <S.IntroContainer ref={ref} id="section-home">
         <S.IntroDescricaoContent
           data-scroll
           data-scroll-direction="horizontal"
           data-scroll-speed="6"
         >
           <S.IntroDot />
-          <S.IntroDescricaoTitulo dangerouslySetInnerHTML={{ __html: title }} />
+          <S.IntroDescricaoTitulo
+            dangerouslySetInnerHTML={{ __html: introProps.title }}
+          />
           <S.IntroDescricaoSubTitulo
-            dangerouslySetInnerHTML={{ __html: smartBio }}
+            dangerouslySetInnerHTML={{ __html: introProps.smartBio }}
           />
         </S.IntroDescricaoContent>
         <S.IntroImagemContent

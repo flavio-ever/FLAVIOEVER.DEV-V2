@@ -1,4 +1,5 @@
 import 'twin.macro'
+import React from 'react'
 
 import { useEffect, useState } from 'react'
 import { GiHamburger } from 'react-icons/gi'
@@ -6,7 +7,7 @@ import { IoClose } from 'react-icons/io5'
 
 import * as S from './styles'
 
-const Navbar: React.FC<any> = () => {
+const Navbar = React.forwardRef((ref: any) => {
   const [listVisible, setListVisible] = useState<boolean>(false)
   const [navVisible, setNavVisible] = useState<boolean>(true)
   const [isBrowser, setIsBrowser] = useState(false)
@@ -16,7 +17,7 @@ const Navbar: React.FC<any> = () => {
   }, [])
 
   if (isBrowser) {
-    const container = document.querySelectorAll('.has-scroll-smooth')[0]
+    const container = document.querySelectorAll('html')[0]
     container?.addEventListener('wheel', (event: any) => {
       if (event?.deltaY > 0) {
         setNavVisible(false)
@@ -27,7 +28,12 @@ const Navbar: React.FC<any> = () => {
   }
 
   return (
-    <S.NavbarHeader fixed={navVisible}>
+    <S.NavbarHeader
+      fixed={navVisible}
+      ref={ref}
+      data-scroll-section
+      id="navbar"
+    >
       <S.NavbarNav>
         <svg
           tw="flex space-x-6 items-center"
@@ -89,6 +95,6 @@ const Navbar: React.FC<any> = () => {
       </S.NavbarNav>
     </S.NavbarHeader>
   )
-}
+})
 
 export default Navbar

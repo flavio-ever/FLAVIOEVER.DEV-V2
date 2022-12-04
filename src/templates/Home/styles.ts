@@ -1,4 +1,4 @@
-import tw, { styled, css } from 'twin.macro'
+import tw, { styled } from 'twin.macro'
 
 export const Main = styled.main(() => [
   tw`
@@ -22,26 +22,5 @@ export const Title = styled.main(() => [
     sm:text-6xl
     lg:text-8xl
     xl:text-9xl
-  `
-])
-
-/**
- * SECTION: Contato
- */
-export const ContatoContainer = styled.section(() => [
-  tw`
-    flex
-    flex-col
-    items-center
-    justify-center
-    mb-20
-    text-center
-  `,
-  tw`
-  `,
-  css`
-    button {
-      ${tw`mt-12`}
-    }
   `
 ])
