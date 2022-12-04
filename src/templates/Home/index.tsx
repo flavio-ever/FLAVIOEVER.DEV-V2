@@ -35,20 +35,20 @@ export default function HomeTemplate({
         {authorProps && <IntroSection introProps={authorProps} />}
         {/* SobreMim */}
         {authorProps && (
-          <AboutMeSection title="Sobre_mim" aboutMeProps={authorProps} />
+          <AboutMeSection title="sobre_mim" aboutMeProps={authorProps} />
         )}
         {/* Experiencias */}
         {jobsProps.length > 0 && (
-          <ExperiencesSection title="Experiências" jobsProps={jobsProps} />
+          <ExperiencesSection title="experiências" jobsProps={jobsProps} />
         )}
         {/* Projetos */}
         {projectsProps.length > 0 && (
-          <ProjectSection title="Projetos" projectsProps={projectsProps} />
+          <ProjectSection title="projetos" projectsProps={projectsProps} />
         )}
         {/* Contato */}
         {contactProps?.description && contactProps.contactUrl && (
           <ContactSection
-            title="Contato"
+            title="contato"
             textButton="Entre em contato"
             contactProps={contactProps}
           />

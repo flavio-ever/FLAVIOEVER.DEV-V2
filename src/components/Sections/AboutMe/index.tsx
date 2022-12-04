@@ -20,18 +20,16 @@ const AboutMeSection = React.forwardRef(
   ({ title, aboutMeProps }: AboutMeSectionProps, ref: any) => {
     return (
       <S.SobreMimContainer ref={ref} id="section-about-me">
+        <Home.Title>{title}</Home.Title>
         <div>
-          <Home.Title>{title}</Home.Title>
-          <div>
-            <div dangerouslySetInnerHTML={{ __html: aboutMeProps.largeBio }} />
-            <br />
-            <a href={aboutMeProps.downloadUrl} target="blank">
-              <Button>
-                <IoMdDownload />
-                <p>Baixar meu cv</p>
-              </Button>
-            </a>
-          </div>
+          <div dangerouslySetInnerHTML={{ __html: aboutMeProps.largeBio }} />
+          <br />
+          <a href={aboutMeProps.downloadUrl} target="blank">
+            <Button>
+              <IoMdDownload />
+              <p>Baixar meu cv</p>
+            </Button>
+          </a>
         </div>
       </S.SobreMimContainer>
     )
