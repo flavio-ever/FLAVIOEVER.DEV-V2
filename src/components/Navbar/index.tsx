@@ -7,7 +7,7 @@ import { IoClose } from 'react-icons/io5'
 
 import * as S from './styles'
 
-const Navbar = React.forwardRef((ref: any) => {
+const Navbar = React.forwardRef(({ options }: any, ref: any) => {
   const [listVisible, setListVisible] = useState<boolean>(false)
   const [navVisible, setNavVisible] = useState<boolean>(true)
   const [isBrowser, setIsBrowser] = useState(false)
@@ -15,6 +15,8 @@ const Navbar = React.forwardRef((ref: any) => {
   useEffect(() => {
     setIsBrowser(typeof window !== 'undefined')
   }, [])
+
+  console.log(options)
 
   if (isBrowser) {
     const container = document.querySelectorAll('html')[0]
