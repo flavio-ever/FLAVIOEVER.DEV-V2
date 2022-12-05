@@ -29,6 +29,13 @@ const ContactSection = React.forwardRef(
             <span>{textButton}</span>
           </Button>
         </a>
+        <br />
+        <br />
+        <br />
+        <p>
+          Projetado e construído com <span style={{ color: '#F04F4F' }}>♥</span>{' '}
+          por Flavio Ever
+        </p>
       </S.ContatoContainer>
     )
   }

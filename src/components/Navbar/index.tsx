@@ -66,27 +66,22 @@ const Navbar = React.forwardRef(({ options }: any, ref: any) => {
         <S.NavbarList visible={!listVisible}>
           <S.NavbarListItem>
             <a href="#section-home" data-scroll-to>
-              Home
-            </a>
-          </S.NavbarListItem>
-          <S.NavbarListItem>
-            <a href="#section-about-me" data-scroll-to>
-              Sobre mim
+              01. Home
             </a>
           </S.NavbarListItem>
           <S.NavbarListItem>
             <a href="#section-experiences" data-scroll-to>
-              Experiencias
+              01. Experiencias
             </a>
           </S.NavbarListItem>
           <S.NavbarListItem>
             <a href="#section-projects" data-scroll-to>
-              Projetos
+              03. Projetos
             </a>
           </S.NavbarListItem>
           <S.NavbarListItem>
             <a href="#section-contact" data-scroll-to>
-              Contato
+              04. Contato
             </a>
           </S.NavbarListItem>
           <IoClose
