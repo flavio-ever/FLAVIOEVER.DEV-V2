@@ -71,7 +71,7 @@ const Navbar = React.forwardRef(({ options }: any, ref: any) => {
           </S.NavbarListItem>
           <S.NavbarListItem>
             <a href="#section-experiences" data-scroll-to>
-              01. Experiencias
+              02. Experiencias
             </a>
           </S.NavbarListItem>
           <S.NavbarListItem>
