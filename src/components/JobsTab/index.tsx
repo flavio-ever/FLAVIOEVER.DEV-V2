@@ -61,8 +61,8 @@ export default function JobsTab({ jobsProps }: JobsTabProps) {
               <CSSTransition
                 key={key}
                 in={activeTabId === key}
-                timeout={4000}
-                classNames="fade"
+                timeout={200}
+                classNames="panel-fade"
               >
                 <S.JobsTabPanelDescription
                   id={`tabPanel-${key}`}

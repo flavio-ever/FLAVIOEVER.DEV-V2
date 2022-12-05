@@ -3,6 +3,7 @@ import tw, { styled } from 'twin.macro'
 export const Main = styled.main(() => [
   tw`
     container
+    mx-auto
     text-purple-3
   `
 ])

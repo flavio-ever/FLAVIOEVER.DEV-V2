@@ -36,9 +36,7 @@ export const InfoWrap = styled.div<InfoWrapProps>(({ evenOrOdd }) => [
     space-y-5
   `,
   tw`
-    sm:w-2/6
-    md:w-4/6
-
+    sm:w-3/5
     sm:bg-purple-1/0
     sm:p-0
     sm:relative
@@ -109,16 +107,16 @@ export const ImageWrap = styled.div(() => [
   tw`
     relative
     w-full
-    shadow-md
   `,
   tw`
-    sm:w-4/6
-    md:w-2/6
-    sm:max-w-[31.25rem]
-    sm:max-h-[22.5rem]
+    sm:w-2/5
     `,
   css`
-    @media only screen and (min-width: 1280px) {
+    image {
+      border: 10px solid red;
+    }
+
+    /* @media only screen and (min-width: 1280px) {
       // Colors
       --bg-color: ${theme`colors.purple.1`};
       --dot-color: rgba(255, 255, 255, 0.4);
@@ -151,19 +149,7 @@ export const ImageWrap = styled.div(() => [
         background: var(--linear-bg);
         background-size: var(--dot-space) var(--dot-space);
       }
-
-      ::after {
-        content: '';
-        position: absolute;
-        width: 15.5rem;
-        height: 15.5rem;
-        z-index: -10;
-        right: -1rem;
-        bottom: -1rem;
-        background: var(--linear-bg);
-        background-size: var(--dot-space) var(--dot-space);
-      }
-    }
+    } */
 
     img {
       ${tw`rounded-md`};

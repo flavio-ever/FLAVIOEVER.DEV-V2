@@ -10,12 +10,6 @@ const CustomStyles = createGlobalStyle`
     --custom-orange-1: #FF7700;
   }
 
-  html {
-    /* scrollbar-color: var(--custom-purple-3) var(--custom-purple-1);
-    scrollbar-width: thin;
-    scroll-behavior: smooth; */
-  }
-
   body {
     ${tw`antialiased`};
 
@@ -40,6 +34,24 @@ const CustomStyles = createGlobalStyle`
     hr {
       border-color: var(--custom-purple-2);
     }
+  }
+
+  /**
+    @react-transition-group
+  */
+  .panel-fade-enter {
+    opacity: 0;
+  }
+  .panel-fade-enter-active {
+    opacity: 1;
+    transition: opacity 600ms;
+  }
+  .panel-fade-exit {
+    opacity: 1;
+  }
+  .panel-fade-exit-active {
+    opacity: 0;
+    transition: opacity 600ms;
   }
 `
 

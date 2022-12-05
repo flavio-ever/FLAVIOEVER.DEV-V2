@@ -56,8 +56,8 @@ export default function ProjectCard({ project, id }: JobsCardProps) {
       <S.ImageWrap>
         <Image
           layout="responsive"
-          width={500}
-          height={360}
+          width={600}
+          height={300}
           src={project.image.url}
         />
       </S.ImageWrap>
