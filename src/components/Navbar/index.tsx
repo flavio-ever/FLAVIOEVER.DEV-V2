@@ -29,6 +29,11 @@ const Navbar = React.forwardRef(({ options }: any, ref: any) => {
     })
   }
 
+  const goToSection = (id: string) => {
+    setNavVisible(false)
+    document.querySelectorAll(id)[0].scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
     <S.NavbarHeader
       fixed={navVisible}
@@ -65,24 +70,18 @@ const Navbar = React.forwardRef(({ options }: any, ref: any) => {
         />
         <S.NavbarList visible={!listVisible}>
           <S.NavbarListItem>
-            <a href="#section-home" data-scroll-to>
-              01. Home
-            </a>
+            <a onClick={() => goToSection('#section-home')}>01. Home</a>
           </S.NavbarListItem>
           <S.NavbarListItem>
-            <a href="#section-experiences" data-scroll-to>
+            <a onClick={() => goToSection('#section-experiences')}>
               02. Experiencias
             </a>
           </S.NavbarListItem>
           <S.NavbarListItem>
-            <a href="#section-projects" data-scroll-to>
-              03. Projetos
-            </a>
+            <a onClick={() => goToSection('#section-projects')}>03. Projetos</a>
           </S.NavbarListItem>
           <S.NavbarListItem>
-            <a href="#section-contact" data-scroll-to>
-              04. Contato
-            </a>
+            <a onClick={() => goToSection('#section-contact')}>04. Contato</a>
           </S.NavbarListItem>
           <IoClose
             tw="fill-current text-purple-4 cursor-pointer sm:hidden absolute top-0 right-3 w-8 h-8"

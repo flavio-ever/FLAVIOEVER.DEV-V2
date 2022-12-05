@@ -1,5 +1,3 @@
-import { useRef } from 'react'
-
 import * as S from './styles'
 
 import Navbar from '../../components/Navbar'
@@ -23,32 +21,28 @@ export default function HomeTemplate({
   projectsProps,
   contactProps
 }: HomeTemplateProps) {
-  const containerRef = useRef(null)
-
   return (
     <S.Main>
       {/* SobreMim */}
       <Navbar />
-      <div ref={containerRef}>
-        {/* IntroSection */}
-        {authorProps && <IntroSection introProps={authorProps} />}
-        {/* Experiencias */}
-        {jobsProps.length > 0 && (
-          <ExperiencesSection title="experiências" jobsProps={jobsProps} />
-        )}
-        {/* Projetos */}
-        {projectsProps.length > 0 && (
-          <ProjectSection title="projetos" projectsProps={projectsProps} />
-        )}
-        {/* Contato */}
-        {contactProps?.description && contactProps.contactUrl && (
-          <ContactSection
-            title="contato"
-            textButton="Entre em contato"
-            contactProps={contactProps}
-          />
-        )}
-      </div>
+      {/* IntroSection */}
+      {authorProps && <IntroSection introProps={authorProps} />}
+      {/* Experiencias */}
+      {jobsProps.length > 0 && (
+        <ExperiencesSection title="experiências" jobsProps={jobsProps} />
+      )}
+      {/* Projetos */}
+      {projectsProps.length > 0 && (
+        <ProjectSection title="projetos" projectsProps={projectsProps} />
+      )}
+      {/* Contato */}
+      {contactProps?.description && contactProps.contactUrl && (
+        <ContactSection
+          title="contato"
+          textButton="Entre em contato"
+          contactProps={contactProps}
+        />
+      )}
     </S.Main>
   )
 }
