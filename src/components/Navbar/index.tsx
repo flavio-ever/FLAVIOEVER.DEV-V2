@@ -70,18 +70,24 @@ const Navbar = React.forwardRef(({ options }: any, ref: any) => {
         />
         <S.NavbarList visible={!listVisible}>
           <S.NavbarListItem>
-            <a onClick={() => goToSection('#section-home')}>01. Home</a>
+            <button onClick={() => goToSection('#section-home')}>
+              01. Home
+            </button>
           </S.NavbarListItem>
           <S.NavbarListItem>
-            <a onClick={() => goToSection('#section-experiences')}>
+            <button onClick={() => goToSection('#section-experiences')}>
               02. Experiencias
-            </a>
+            </button>
           </S.NavbarListItem>
           <S.NavbarListItem>
-            <a onClick={() => goToSection('#section-projects')}>03. Projetos</a>
+            <button onClick={() => goToSection('#section-projects')}>
+              03. Projetos
+            </button>
           </S.NavbarListItem>
           <S.NavbarListItem>
-            <a onClick={() => goToSection('#section-contact')}>04. Contato</a>
+            <button onClick={() => goToSection('#section-contact')}>
+              04. Contato
+            </button>
           </S.NavbarListItem>
           <IoClose
             tw="fill-current text-purple-4 cursor-pointer sm:hidden absolute top-0 right-3 w-8 h-8"
