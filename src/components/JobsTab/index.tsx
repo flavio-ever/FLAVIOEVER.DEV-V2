@@ -74,7 +74,7 @@ export default function JobsTab({ jobsProps }: JobsTabProps) {
                     {'  '}
                     <a
                       href={url}
-                      className="inline-link"
+                      className="link link--mneme"
                       target={'_blank'}
                       rel="noreferrer"
                     >

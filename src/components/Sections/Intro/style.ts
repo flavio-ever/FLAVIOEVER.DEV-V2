@@ -81,7 +81,15 @@ export const IntroDescricaoTitulo = styled.div(() => [
   `
 ])
 
-export const IntroDescricaoSubTitulo = styled.div(() => [tw``])
+export const IntroDescricaoSubTitulo = styled.div(() => [
+  tw``,
+  css`
+    /* a {
+      display: inline-block;
+      color: ${theme`colors.orange.1`};
+    } */
+  `
+])
 
 export const IntroImagemContent = styled.div(() => [
   tw`
