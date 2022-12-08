@@ -1,7 +1,7 @@
 import tw, { styled, css, theme } from 'twin.macro'
 
-type TJobsTabNavItem = { isActive: boolean }
-type JobsTabNavItemSelected = { activeTabId: number }
+type TCareerTabNavItem = { isActive: boolean }
+type CareerTabNavItemSelected = { activeTabId: number }
 
 export const Container = styled.div(() => [
   tw`
@@ -17,7 +17,7 @@ export const Container = styled.div(() => [
   css``
 ])
 
-export const JobsTabNav = styled.nav(() => [
+export const CareerTabNav = styled.nav(() => [
   tw`
     relative
     flex
@@ -47,8 +47,8 @@ export const JobsTabNav = styled.nav(() => [
   `
 ])
 
-export const JobsTabNavItem = styled.div(
-  ({ isActive = false }: TJobsTabNavItem) => [
+export const CareerTabNavItem = styled.div(
+  ({ isActive = false }: TCareerTabNavItem) => [
     tw`
       flex
       place-items-center
@@ -69,8 +69,8 @@ export const JobsTabNavItem = styled.div(
   ]
 )
 
-export const JobsTabNavItemSelected = styled.div(
-  ({ activeTabId }: JobsTabNavItemSelected) => [
+export const CareerTabNavItemSelected = styled.div(
+  ({ activeTabId }: CareerTabNavItemSelected) => [
     tw`
       bg-orange-1
       absolute
@@ -95,9 +95,11 @@ export const JobsTabNavItemSelected = styled.div(
   ]
 )
 
-export const JobsTabPanels = styled.section(() => [tw`sm:w-full min-h-[13rem]`])
+export const CareerTabPanels = styled.section(() => [
+  tw`sm:w-full min-h-[13rem]`
+])
 
-export const JobsTabPanelDescription = styled.article(() => [
+export const CareerTabPanelDescription = styled.article(() => [
   css`
     a {
       color: ${theme`colors.orange.1`};

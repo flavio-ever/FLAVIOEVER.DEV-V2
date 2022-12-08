@@ -8,7 +8,7 @@ import { CSSTransition } from 'react-transition-group'
 
 import * as S from './styles'
 
-export type JobsProps = {
+export type CareerTabProps = {
   id: string
   company: string
   occupation: string
@@ -20,11 +20,11 @@ export type JobsProps = {
   }
 }
 
-type JobsTabProps = {
-  jobsProps: JobsProps[]
+type CareerTab = {
+  careerProps: CareerTabProps[]
 }
 
-export default function JobsTab({ jobsProps }: JobsTabProps) {
+export default function CareerTab({ careerProps }: CareerTab) {
   const [activeTabId, setActiveTabId] = useState(0)
 
   const formatDate = (date: string) => {
@@ -35,24 +35,24 @@ export default function JobsTab({ jobsProps }: JobsTabProps) {
     })
   }
 
-  return jobsProps.length ? (
+  return careerProps.length ? (
     <S.Container>
-      <S.JobsTabNav>
-        {jobsProps.map(({ id, company }, key) => {
+      <S.CareerTabNav>
+        {careerProps.map(({ id, company }, key) => {
           return (
-            <S.JobsTabNavItem
+            <S.CareerTabNavItem
               key={id}
               onClick={() => setActiveTabId(key)}
               isActive={activeTabId === key}
             >
               {company}
-            </S.JobsTabNavItem>
+            </S.CareerTabNavItem>
           )
         })}
-        <S.JobsTabNavItemSelected activeTabId={activeTabId} />
-      </S.JobsTabNav>
-      <S.JobsTabPanels>
-        {jobsProps.map(
+        <S.CareerTabNavItemSelected activeTabId={activeTabId} />
+      </S.CareerTabNav>
+      <S.CareerTabPanels>
+        {careerProps.map(
           (
             { company, description, startDate, endDate, occupation, url },
             key
@@ -64,7 +64,7 @@ export default function JobsTab({ jobsProps }: JobsTabProps) {
                 timeout={200}
                 classNames="panel-fade"
               >
-                <S.JobsTabPanelDescription
+                <S.CareerTabPanelDescription
                   id={`tabPanel-${key}`}
                   role="tabPanel"
                   hidden={activeTabId !== key}
@@ -88,12 +88,12 @@ export default function JobsTab({ jobsProps }: JobsTabProps) {
                     tw="mt-4"
                     dangerouslySetInnerHTML={{ __html: description.html }}
                   />
-                </S.JobsTabPanelDescription>
+                </S.CareerTabPanelDescription>
               </CSSTransition>
             )
           }
         )}
-      </S.JobsTabPanels>
+      </S.CareerTabPanels>
     </S.Container>
   ) : (
     <></>

@@ -15,9 +15,9 @@ export const GET_AUTHOR = gql`
     }
   }
 `
-export const GET_JOBS = gql`
+export const GET_CAREER = gql`
   query getJobs() {
-    jobs(orderBy: startDate_DESC) {
+    careers(orderBy: startDate_DESC) {
       id
       company
       occupation
