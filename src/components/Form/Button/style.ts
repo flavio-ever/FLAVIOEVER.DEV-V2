@@ -23,8 +23,7 @@ export const Container = styled.button(() => [
     items-center
 
     space-x-3
-    `,
-  tw`
+
     hover:bg-orange-1
     hover:text-white-1
       `,

@@ -9,8 +9,7 @@ export const Container = styled.div(() => [
     flex-col
     overflow-x-hidden
     w-full
-  `,
-  tw`
+
     sm:overflow-visible
     sm:flex-row
   `,
@@ -24,8 +23,7 @@ export const CareerTabNav = styled.nav(() => [
     flex-row
     overflow-x-auto
     mb-5
-  `,
-  tw`
+
     sm:overflow-hidden
     sm:flex-col
     sm:mr-10
@@ -60,8 +58,7 @@ export const CareerTabNavItem = styled.div(
       text-purple-4
       cursor-pointer
       hover:bg-purple-2
-    `,
-    tw`
+
       sm:h-12
       sm:w-52
       `,
@@ -79,8 +76,7 @@ export const CareerTabNavItemSelected = styled.div(
       left-0
       w-52
       h-1
-    `,
-    tw`
+
       sm:w-1
       sm:h-12
     `,

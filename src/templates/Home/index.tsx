@@ -7,6 +7,7 @@ import Button from 'components/Form/Button'
 import CareerTab, { CareerTabProps } from 'components/System/CareerTab'
 import ProjectCard, { ProjectProps } from 'components/System/ProjectCard'
 import { IoMailUnreadOutline } from 'react-icons/io5'
+import Title from 'components/System/Title'
 
 export type AuthorProps = {
   title: string
@@ -74,7 +75,7 @@ export default function HomeTemplate({
 
       {careerProps.length > 0 && (
         <S.CareerContainer id="section-career">
-          <S.Title>Carreira</S.Title>
+          <Title>Carreira</Title>
           <CareerTab careerProps={careerProps} />
         </S.CareerContainer>
       )}
@@ -83,7 +84,7 @@ export default function HomeTemplate({
 
       {projectsProps.length > 0 && (
         <S.ProjectContainer id="section-projects">
-          <S.Title>Projetos</S.Title>
+          <Title>Projetos</Title>
           {projectsProps.map((job, key) => (
             <ProjectCard key={key} project={job} id={key + 1} />
           ))}
@@ -94,7 +95,7 @@ export default function HomeTemplate({
 
       {contactProps?.description && contactProps.contactUrl && (
         <S.ContactContainer id="section-contact">
-          <S.Title>Contato</S.Title>
+          <Title>Contato</Title>
           <div
             dangerouslySetInnerHTML={{ __html: contactProps?.description }}
           />
@@ -104,8 +105,6 @@ export default function HomeTemplate({
               <span>Entre em contato</span>
             </Button>
           </a>
-          <br />
-          <br />
           <p>
             Projetado e construído com{' '}
             <span style={{ color: '#F04F4F' }}>♥</span> por Flavio Ever

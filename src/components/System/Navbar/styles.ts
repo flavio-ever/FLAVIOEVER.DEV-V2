@@ -10,18 +10,18 @@ type TNavbarHeader = {
 
 export const NavbarHeader = styled.header<TNavbarHeader>(({ fixed }) => [
   tw`
-    bg-purple-1/80
-      z-50
-      fixed
-      left-0
-      top-0
-      right-0
-      backdrop-blur-sm
-      text-sm
-      transition-all
-      duration-700
+  bg-purple-1/80
+    z-50
+    fixed
+    left-0
+    top-0
+    right-0
+    backdrop-blur-sm
+    text-sm
+    transition-all
+    duration-700
+    sm:-translate-y-28
     `,
-  tw`sm:-translate-y-28`,
   fixed && tw`sm:translate-y-0`
 ])
 
@@ -43,8 +43,7 @@ export const NavbarList = styled.ul<TUlList>(({ visible }) => [
     bg-purple-1/95
     sm:bg-purple-1/10
     text-purple-3
-  `,
-  tw`
+
     flex
     flex-col
     justify-center
@@ -59,8 +58,7 @@ export const NavbarList = styled.ul<TUlList>(({ visible }) => [
     transition-all
     duration-500
     sm:transition-none
-  `,
-  tw`
+
     sm:flex
     sm:flex-row
     sm:space-y-0

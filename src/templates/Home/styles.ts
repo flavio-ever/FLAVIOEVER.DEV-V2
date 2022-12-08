@@ -8,24 +8,6 @@ export const Main = styled.main(() => [
   `
 ])
 
-export const Title = styled.main(() => [
-  tw`
-    text-purple-2
-    text-4xl
-    font-medium
-
-    m-12
-
-    before:content-['<']
-    after:content-['/>']
-  `,
-  tw`
-    sm:text-6xl
-    lg:text-8xl
-    xl:text-9xl
-  `
-])
-
 /**
  *
  * SECTION AUTHOR
@@ -36,10 +18,7 @@ export const AuthorContainer = styled.section(() => [
   tw`
     flex
     items-center
-    justify-center
     flex-col-reverse
-  `,
-  tw`
     sm:justify-between
     sm:flex-row
     mt-32
@@ -50,8 +29,6 @@ export const AuthorDescricaoContent = styled.div(() => [
   tw`
     relative
     flex-initial
-  `,
-  tw`
     sm:w-1/2
     xl:pr-20
     space-y-5
@@ -64,7 +41,6 @@ export const AuthorDot = styled.div(() => [
     absolute
     -top-3
     -left-20
-
     invisible
     xl:visible
   `,
@@ -120,8 +96,6 @@ export const AuthorImagemContent = styled.div(() => [
     flex-initial
     flex
     justify-end
-  `,
-  tw`
     sm:w-1/2
   `
 ])
@@ -137,12 +111,8 @@ export const CareerContainer = styled.section(() => [
     flex
     flex-col
     items-center
-    justify-center
-
-    min-h-[50vh]
-  `,
-  tw`
-    sm:space-y-20
+    min-h-[35vh]
+    space-y-20
   `
 ])
 
@@ -157,12 +127,8 @@ export const ProjectContainer = styled.section(() => [
     flex
     flex-col
     items-center
-    justify-center
-
-    min-h-[50vh]
-  `,
-  tw`
-    sm:space-y-20
+    min-h-[35vh]
+    space-y-20
   `
 ])
 
@@ -177,17 +143,8 @@ export const ContactContainer = styled.section(() => [
     flex
     flex-col
     items-center
-    justify-center
-    mb-20
     text-center
-
-    min-h-[50vh]
-  `,
-  tw`
-  `,
-  css`
-    button {
-      ${tw`mt-12`}
-    }
+    mb-20
+    space-y-20
   `
 ])
