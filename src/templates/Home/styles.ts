@@ -127,7 +127,7 @@ export const PostButtonContent = styled.section(() => [
 export const PostContent = styled.section(() => [
   tw`
     grid
-    grid-cols-2
+    sm:grid-cols-2
     gap-4
   `
 ])
