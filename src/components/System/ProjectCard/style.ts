@@ -16,7 +16,6 @@ export const Container = styled.div<ContainerProps>(({ evenOrOdd }) => [
 
     w-full
     relative
-    m-5
     `,
   !evenOrOdd && tw`flex-row-reverse`
 ])

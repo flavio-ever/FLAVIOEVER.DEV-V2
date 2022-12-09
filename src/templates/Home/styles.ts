@@ -5,6 +5,9 @@ export const Main = styled.main(() => [
     container
     mx-auto
     text-purple-3
+    flex
+    flex-col
+    gap-10
   `
 ])
 
@@ -110,9 +113,15 @@ export const CareerContainer = styled.section(() => [
   tw`
     flex
     flex-col
-    items-center
-    min-h-[35vh]
-    space-y-20
+    gap-10
+  `
+])
+
+export const CareerContent = styled.section(() => [
+  tw`
+    flex
+    flex-col
+    gap-10
   `
 ])
 
@@ -126,9 +135,15 @@ export const ProjectContainer = styled.section(() => [
   tw`
     flex
     flex-col
-    items-center
-    min-h-[35vh]
-    space-y-20
+    gap-10
+  `
+])
+
+export const ProjectContent = styled.section(() => [
+  tw`
+    flex
+    flex-col
+    gap-10
   `
 ])
 
@@ -142,9 +157,16 @@ export const ContactContainer = styled.section(() => [
   tw`
     flex
     flex-col
-    items-center
-    text-center
+    gap-10
     mb-20
-    space-y-20
+  `
+])
+
+export const ContactContent = styled.section(() => [
+  tw`
+    flex
+    flex-col
+    items-center
+    gap-10
   `
 ])

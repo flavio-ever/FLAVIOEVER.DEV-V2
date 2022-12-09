@@ -63,8 +63,8 @@ export default function HomeTemplate({
           <S.AuthorImagemContent>
             <Image
               layout="intrinsic"
-              width={545}
-              height={681}
+              width={445}
+              height={581}
               src="/img/eu_avatar_overlay.png"
             />
           </S.AuthorImagemContent>
@@ -76,7 +76,9 @@ export default function HomeTemplate({
       {careerProps.length > 0 && (
         <S.CareerContainer id="section-career">
           <Title>Carreira</Title>
-          <CareerTab careerProps={careerProps} />
+          <S.CareerContent>
+            <CareerTab careerProps={careerProps} />
+          </S.CareerContent>
         </S.CareerContainer>
       )}
 
@@ -85,9 +87,11 @@ export default function HomeTemplate({
       {projectsProps.length > 0 && (
         <S.ProjectContainer id="section-projects">
           <Title>Projetos</Title>
-          {projectsProps.map((job, key) => (
-            <ProjectCard key={key} project={job} id={key + 1} />
-          ))}
+          <S.ProjectContent>
+            {projectsProps.map((job, key) => (
+              <ProjectCard key={key} project={job} id={key + 1} />
+            ))}
+          </S.ProjectContent>
         </S.ProjectContainer>
       )}
 
@@ -96,19 +100,25 @@ export default function HomeTemplate({
       {contactProps?.description && contactProps.contactUrl && (
         <S.ContactContainer id="section-contact">
           <Title>Contato</Title>
-          <div
-            dangerouslySetInnerHTML={{ __html: contactProps?.description }}
-          />
-          <a href={contactProps.contactUrl} target={'_blank'} rel="noreferrer">
-            <Button>
-              <IoMailUnreadOutline />
-              <span>Entre em contato</span>
-            </Button>
-          </a>
-          <p>
-            Projetado e construído com{' '}
-            <span style={{ color: '#F04F4F' }}>♥</span> por Flavio Ever
-          </p>
+          <S.ContactContent>
+            <div
+              dangerouslySetInnerHTML={{ __html: contactProps?.description }}
+            />
+            <a
+              href={contactProps.contactUrl}
+              target={'_blank'}
+              rel="noreferrer"
+            >
+              <Button>
+                <IoMailUnreadOutline />
+                <span>Entre em contato</span>
+              </Button>
+            </a>
+            <p>
+              Projetado e construído com{' '}
+              <span style={{ color: '#F04F4F' }}>♥</span> por Flavio Ever
+            </p>
+          </S.ContactContent>
         </S.ContactContainer>
       )}
     </S.Main>
