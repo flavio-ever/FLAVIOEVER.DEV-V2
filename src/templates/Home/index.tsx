@@ -1,6 +1,7 @@
 import * as S from './styles'
 import Image from 'next/image'
 import { IoMdDownload } from 'react-icons/io'
+import { CiCircleMore } from 'react-icons/ci'
 
 import Navbar from '../../components/System/Navbar'
 import Button from 'components/Form/Button'
@@ -69,6 +70,52 @@ export default function HomeTemplate({
             />
           </S.AuthorImagemContent>
         </S.AuthorContainer>
+      )}
+
+      {/* Post */}
+
+      {careerProps.length > 0 && (
+        <S.PostContainer id="section-blog">
+          <Title>Últimas postagens</Title>
+          <S.PostContent>
+            <S.PostItem>
+              <S.PostItemDate>Dez 8</S.PostItemDate>
+              <S.PostItemTitle>
+                Padrões de projeto com Nextjs lorem xpto
+              </S.PostItemTitle>
+            </S.PostItem>
+            <S.PostItem>
+              <S.PostItemDate>Dez 8</S.PostItemDate>
+              <S.PostItemTitle>
+                Padrões de projeto com Nextjs lorem xpto
+              </S.PostItemTitle>
+            </S.PostItem>
+            <S.PostItem>
+              <S.PostItemDate>Dez 8</S.PostItemDate>
+              <S.PostItemTitle>
+                Padrões de projeto com Nextjs lorem xpto
+              </S.PostItemTitle>
+            </S.PostItem>
+            <S.PostItem>
+              <S.PostItemDate>Dez 8</S.PostItemDate>
+              <S.PostItemTitle>
+                Padrões de projeto com Nextjs lorem xpto
+              </S.PostItemTitle>
+            </S.PostItem>
+            <S.PostItem>
+              <S.PostItemDate>Dez 8</S.PostItemDate>
+              <S.PostItemTitle>
+                Padrões de projeto com Nextjs lorem xpto
+              </S.PostItemTitle>
+            </S.PostItem>
+          </S.PostContent>
+          <S.PostButtonContent>
+            <Button>
+              <CiCircleMore />
+              <p>Ver tudo</p>
+            </Button>
+          </S.PostButtonContent>
+        </S.PostContainer>
       )}
 
       {/* Career */}

@@ -75,18 +75,23 @@ const Navbar = React.forwardRef(({ options }: any, ref: any) => {
             </button>
           </S.NavbarListItem>
           <S.NavbarListItem>
+            <button onClick={() => goToSection('#section-blog')}>
+              02. Blog
+            </button>
+          </S.NavbarListItem>
+          <S.NavbarListItem>
             <button onClick={() => goToSection('#section-career')}>
-              02. Carreira
+              03. Carreira
             </button>
           </S.NavbarListItem>
           <S.NavbarListItem>
             <button onClick={() => goToSection('#section-projects')}>
-              03. Projetos
+              04. Projetos
             </button>
           </S.NavbarListItem>
           <S.NavbarListItem>
             <button onClick={() => goToSection('#section-contact')}>
-              04. Contato
+              05. Contato
             </button>
           </S.NavbarListItem>
           <IoClose

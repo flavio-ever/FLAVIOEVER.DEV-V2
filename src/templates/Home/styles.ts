@@ -105,6 +105,54 @@ export const AuthorImagemContent = styled.div(() => [
 
 /***
  *
+ * SECTION POST
+ *
+ */
+
+export const PostContainer = styled.section(() => [
+  tw`
+    flex
+    flex-col
+    gap-10
+  `
+])
+
+export const PostButtonContent = styled.section(() => [
+  tw`
+    flex
+    justify-center
+  `
+])
+
+export const PostContent = styled.section(() => [
+  tw`
+    grid
+    grid-cols-2
+    gap-4
+  `
+])
+
+export const PostItem = styled.section(() => [
+  tw`
+    flex
+  `
+])
+
+export const PostItemDate = styled.section(() => [
+  tw`
+  text-orange-1
+  min-w-[4rem]
+  `
+])
+
+export const PostItemTitle = styled.section(() => [
+  tw`
+  text-white-1
+  `
+])
+
+/***
+ *
  * SECTION CAREER
  *
  */
