@@ -25,6 +25,9 @@ export const InfoWrap = styled.div<InfoWrapProps>(({ evenOrOdd }) => [
     flex
     flex-col
 
+    justify-between
+    md:justify-start
+
     absolute
     z-10
     p-3
