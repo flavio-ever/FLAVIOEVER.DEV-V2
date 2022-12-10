@@ -59,3 +59,14 @@ export const GET_CONTACT = gql`
     }
   }
 `
+
+export const GET_SMALL_POSTS = gql`
+  query getSmallPosts {
+    posts {
+      id
+      title
+      slug
+      date
+    }
+  }
+`

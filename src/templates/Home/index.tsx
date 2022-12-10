@@ -1,19 +1,28 @@
 import * as S from './styles'
 import Image from 'next/image'
 import { IoMdDownload } from 'react-icons/io'
-import { CiCircleMore } from 'react-icons/ci'
+import { CgMoreO } from 'react-icons/cg'
+import { IoMailUnreadOutline } from 'react-icons/io5'
+import { format } from 'date-fns'
+import ptBr from 'date-fns/locale/pt-BR'
+import Link from 'next/link'
 
 import Navbar from '../../components/System/Navbar'
 import Button from 'components/Form/Button'
 import CareerTab, { CareerTabProps } from 'components/System/CareerTab'
 import ProjectCard, { ProjectProps } from 'components/System/ProjectCard'
-import { IoMailUnreadOutline } from 'react-icons/io5'
 import Title from 'components/System/Title'
 
 export type AuthorProps = {
   title: string
   smartBio: string
   downloadUrl: string
+}
+
+export type PostProps = {
+  title: string
+  slug: string
+  date: string
 }
 
 export type ContactProps = {
@@ -23,6 +32,7 @@ export type ContactProps = {
 
 export type HomeTemplateProps = {
   authorProps: AuthorProps
+  postsProps: PostProps[]
   careerProps: CareerTabProps[]
   projectsProps: ProjectProps[]
   contactProps: ContactProps
@@ -30,6 +40,7 @@ export type HomeTemplateProps = {
 
 export default function HomeTemplate({
   authorProps,
+  postsProps,
   careerProps,
   projectsProps,
   contactProps
@@ -78,40 +89,22 @@ export default function HomeTemplate({
         <S.PostContainer id="section-blog">
           <Title>Últimas postagens</Title>
           <S.PostContent>
-            <S.PostItem>
-              <S.PostItemDate>Dez 8</S.PostItemDate>
-              <S.PostItemTitle>
-                Padrões de projeto com Nextjs lorem xpto
-              </S.PostItemTitle>
-            </S.PostItem>
-            <S.PostItem>
-              <S.PostItemDate>Dez 8</S.PostItemDate>
-              <S.PostItemTitle>
-                Padrões de projeto com Nextjs lorem xpto
-              </S.PostItemTitle>
-            </S.PostItem>
-            <S.PostItem>
-              <S.PostItemDate>Dez 8</S.PostItemDate>
-              <S.PostItemTitle>
-                Padrões de projeto com Nextjs lorem xpto
-              </S.PostItemTitle>
-            </S.PostItem>
-            <S.PostItem>
-              <S.PostItemDate>Dez 8</S.PostItemDate>
-              <S.PostItemTitle>
-                Padrões de projeto com Nextjs lorem xpto
-              </S.PostItemTitle>
-            </S.PostItem>
-            <S.PostItem>
-              <S.PostItemDate>Dez 8</S.PostItemDate>
-              <S.PostItemTitle>
-                Padrões de projeto com Nextjs lorem xpto
-              </S.PostItemTitle>
-            </S.PostItem>
+            {postsProps.map((post, key) => (
+              <Link href={`blog/${post.slug}`} key={key}>
+                <S.PostItem>
+                  <S.PostItemDate>
+                    {format(new Date(post.date + 'T00:00:00'), "dd 'de' MMM", {
+                      locale: ptBr
+                    })}
+                  </S.PostItemDate>
+                  <S.PostItemTitle>{post.title}</S.PostItemTitle>
+                </S.PostItem>
+              </Link>
+            ))}
           </S.PostContent>
           <S.PostButtonContent>
             <Button>
-              <CiCircleMore />
+              <CgMoreO />
               <p>Ver tudo</p>
             </Button>
           </S.PostButtonContent>

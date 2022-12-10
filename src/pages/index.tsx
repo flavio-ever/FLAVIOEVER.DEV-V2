@@ -6,11 +6,13 @@ import {
   GET_AUTHOR,
   GET_CONTACT,
   GET_CAREER,
-  GET_PROJECTS
+  GET_PROJECTS,
+  GET_SMALL_POSTS
 } from 'graphql/queries'
 
 export default function HomePage({
   authorProps,
+  postsProps,
   careerProps,
   projectsProps,
   contactProps
@@ -18,6 +20,7 @@ export default function HomePage({
   return (
     <HomeTemplate
       authorProps={authorProps}
+      postsProps={postsProps}
       careerProps={careerProps}
       projectsProps={projectsProps}
       contactProps={contactProps}
@@ -27,6 +30,7 @@ export default function HomePage({
 
 const graphQlAdapter = (
   authors: any[],
+  posts: any[],
   careers: any[],
   projects: any[],
   contacts: any[]
@@ -40,6 +44,7 @@ const graphQlAdapter = (
       smartBio: author.smallBio.html,
       downloadUrl: author.downloadUrl
     },
+    postsProps: posts,
     careerProps: careers,
     projectsProps: projects,
     contactProps: {
@@ -51,12 +56,13 @@ const graphQlAdapter = (
 
 export const getStaticProps: GetStaticProps = async () => {
   const { authors } = await client.request(GET_AUTHOR, { first: 1 })
+  const { posts } = await client.request(GET_SMALL_POSTS)
   const { careers } = await client.request(GET_CAREER)
   const { projects } = await client.request(GET_PROJECTS)
   const { contacts } = await client.request(GET_CONTACT)
 
   return {
     revalidate: 60, // ISR  https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration
-    props: graphQlAdapter(authors, careers, projects, contacts)
+    props: graphQlAdapter(authors, posts, careers, projects, contacts)
   }
 }

@@ -117,14 +117,14 @@ export const PostContainer = styled.section(() => [
   `
 ])
 
-export const PostButtonContent = styled.section(() => [
+export const PostButtonContent = styled.div(() => [
   tw`
     flex
     justify-center
   `
 ])
 
-export const PostContent = styled.section(() => [
+export const PostContent = styled.div(() => [
   tw`
     grid
     sm:grid-cols-2
@@ -132,20 +132,22 @@ export const PostContent = styled.section(() => [
   `
 ])
 
-export const PostItem = styled.section(() => [
+export const PostItem = styled.div(() => [
   tw`
+    cursor-pointer
     flex
   `
 ])
 
-export const PostItemDate = styled.section(() => [
+export const PostItemDate = styled.div(() => [
   tw`
+  capitalize
   text-orange-1
-  min-w-[4rem]
+  min-w-[6rem]
   `
 ])
 
-export const PostItemTitle = styled.section(() => [
+export const PostItemTitle = styled.div(() => [
   tw`
   text-white-1
   `
@@ -165,7 +167,7 @@ export const CareerContainer = styled.section(() => [
   `
 ])
 
-export const CareerContent = styled.section(() => [
+export const CareerContent = styled.div(() => [
   tw`
     flex
     flex-col
@@ -187,7 +189,7 @@ export const ProjectContainer = styled.section(() => [
   `
 ])
 
-export const ProjectContent = styled.section(() => [
+export const ProjectContent = styled.div(() => [
   tw`
     flex
     flex-col
@@ -210,7 +212,7 @@ export const ContactContainer = styled.section(() => [
   `
 ])
 
-export const ContactContent = styled.section(() => [
+export const ContactContent = styled.div(() => [
   tw`
     flex
     flex-col
