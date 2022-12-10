@@ -103,10 +103,12 @@ export default function HomeTemplate({
             ))}
           </S.PostContent>
           <S.PostButtonContent>
-            <Button>
-              <CgMoreO />
-              <p>Ver tudo</p>
-            </Button>
+            <Link href="blog">
+              <Button>
+                <CgMoreO />
+                <p>Ver tudo</p>
+              </Button>
+            </Link>
           </S.PostButtonContent>
         </S.PostContainer>
       )}
