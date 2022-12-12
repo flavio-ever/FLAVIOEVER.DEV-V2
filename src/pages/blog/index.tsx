@@ -1,5 +1,5 @@
 import client from 'graphql/client'
-import { GET_FULL_POSTS } from 'graphql/queries'
+import { GET_SMALL_POSTS } from 'graphql/queries'
 import { GetStaticProps } from 'next'
 import BlogTemplate, { BlogTemplateProps } from '../../templates/Blog'
 
@@ -14,7 +14,7 @@ const graphQlAdapter = (posts: any[]) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { posts } = await client.request(GET_FULL_POSTS)
+  const { posts } = await client.request(GET_SMALL_POSTS)
 
   return {
     revalidate: 60, // ISR  https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration

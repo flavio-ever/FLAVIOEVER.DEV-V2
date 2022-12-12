@@ -7,7 +7,7 @@ import {
   GET_CONTACT,
   GET_CAREER,
   GET_PROJECTS,
-  GET_SMALL_POSTS
+  GET_SMALL_POSTS_RECENTS
 } from 'graphql/queries'
 
 function HomePage({
@@ -56,7 +56,7 @@ const graphQlAdapter = (
 
 export const getStaticProps: GetStaticProps = async () => {
   const { authors } = await client.request(GET_AUTHOR, { first: 1 })
-  const { posts } = await client.request(GET_SMALL_POSTS)
+  const { posts } = await client.request(GET_SMALL_POSTS_RECENTS)
   const { careers } = await client.request(GET_CAREER)
   const { projects } = await client.request(GET_PROJECTS)
   const { contacts } = await client.request(GET_CONTACT)
