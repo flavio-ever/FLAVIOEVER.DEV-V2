@@ -66,8 +66,9 @@ export const Container = styled.div(() => [
     mx-auto
     sm:w-3/6
     grid
-    grid-cols-3
     gap-4
+    grid-cols-1
+    sm:grid-cols-3
   `
 ])
 
