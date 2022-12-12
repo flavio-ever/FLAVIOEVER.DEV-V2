@@ -10,7 +10,7 @@ import {
   GET_SMALL_POSTS
 } from 'graphql/queries'
 
-export default function HomePage({
+function HomePage({
   authorProps,
   postsProps,
   careerProps,
@@ -66,3 +66,5 @@ export const getStaticProps: GetStaticProps = async () => {
     props: graphQlAdapter(authors, posts, careers, projects, contacts)
   }
 }
+
+export default HomePage

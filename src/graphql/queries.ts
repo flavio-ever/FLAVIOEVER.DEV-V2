@@ -60,6 +60,17 @@ export const GET_CONTACT = gql`
   }
 `
 
+export const GET_SMALL_POSTS_RECENTS = gql`
+  query getSmallPosts {
+    posts {
+      id
+      title
+      slug
+      date
+    }
+  }
+`
+
 export const GET_SMALL_POSTS = gql`
   query getSmallPosts {
     posts {
@@ -67,6 +78,37 @@ export const GET_SMALL_POSTS = gql`
       title
       slug
       date
+      coverImage {
+        url
+      }
+      author {
+        name
+        profileImage {
+          url
+        }
+      }
+    }
+  }
+`
+
+export const GET_FULL_POST_BY_SLUG = gql`
+  query getPreviewPosts() {
+    posts {
+      id
+      title
+      slug
+      date
+      content
+      tags
+      coverImage {
+        url
+      }
+      author {
+        name
+        profileImage {
+          url
+        }
+      }
     }
   }
 `

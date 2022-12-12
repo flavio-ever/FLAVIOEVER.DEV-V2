@@ -60,8 +60,7 @@ const CustomStyles = createGlobalStyle`
   .link {
     cursor: pointer;
     position: relative;
-    white-space: nowrap;
-    color: var(--custom-orange-1);
+    display: inline-block;
   }
 
   .link::before,

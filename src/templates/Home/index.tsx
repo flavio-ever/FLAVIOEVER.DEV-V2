@@ -1,4 +1,3 @@
-import * as S from './styles'
 import Image from 'next/image'
 import { IoMdDownload } from 'react-icons/io'
 import { CgMoreO } from 'react-icons/cg'
@@ -12,6 +11,7 @@ import Button from 'components/Form/Button'
 import CareerTab, { CareerTabProps } from 'components/System/CareerTab'
 import ProjectCard, { ProjectProps } from 'components/System/ProjectCard'
 import Title from 'components/System/Title'
+import * as S from './styles'
 
 export type AuthorProps = {
   title: string

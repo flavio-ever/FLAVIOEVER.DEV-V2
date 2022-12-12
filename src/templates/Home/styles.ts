@@ -25,6 +25,11 @@ export const AuthorContainer = styled.section(() => [
     sm:justify-between
     sm:flex-row
     mt-32
+  `,
+  css`
+    a {
+      color: ${tw`text-orange-1`};
+    }
   `
 ])
 
