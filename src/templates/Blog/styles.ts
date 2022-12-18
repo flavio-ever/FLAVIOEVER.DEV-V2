@@ -20,11 +20,11 @@ export const Container = styled.div(() => [
   tw`
     container
     mx-auto
-    sm:w-3/6
+    lg:w-3/6
     grid
     gap-3
     grid-cols-1
-    sm:grid-cols-1
+    md:grid-cols-1
   `
 ])
 
@@ -37,7 +37,7 @@ export const PostSection = styled.section(() => [
 export const ProfileImage = styled.section(() => [
   tw`
   invisible
-  sm:visible
+  md:visible
   flex
   w-24
   h-24
@@ -80,12 +80,12 @@ export const ContainerTitle = styled.h1(() => [
     //w-4/6
     relative
     flex
-    sm:justify-center
+    md:justify-center
     items-center
-    sm:text-right
+    md:text-right
     text-center
-    sm:mr-10
-    sm:ml-40
+    md:mr-10
+    md:ml-40
     font-medium
     text-lg
     leading-9
