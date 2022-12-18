@@ -40,11 +40,7 @@ export default function BlogTemplate({ postsProps }: BlogTemplateProps) {
                     src={post.author.profileImage.url}
                   />
                 </S.ProfileImage>
-                <div tw="relative flex h-full w-full justify-between">
-                  <div tw="sm:w-4/6 w-2/4">
-                    {/* <div tw="text-purple-3">Flavio Ever</div>
-                  <div tw="text-purple-3">{post.date}</div> */}
-                  </div>
+                <div tw="relative flex h-full w-full justify-center sm:justify-end">
                   <S.ContainerTitle>
                     <S.Title title={post.title} />
                   </S.ContainerTitle>

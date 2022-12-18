@@ -24,7 +24,7 @@ export const Container = styled.div(() => [
     grid
     gap-3
     grid-cols-1
-    sm:grid-cols-2
+    sm:grid-cols-1
   `
 ])
 
@@ -36,6 +36,8 @@ export const PostSection = styled.section(() => [
 
 export const ProfileImage = styled.section(() => [
   tw`
+  invisible
+  sm:visible
   flex
   w-24
   h-24
@@ -67,8 +69,8 @@ export const CoverImage = styled.div<CoverImageProps>(({ src }) => [
   css`
     transform: scale(1.1);
     background-size: cover;
-    filter: blur(6px);
-    -webkit-filter: blur(6px);
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
     background-image: url(${src});
   `
 ])
@@ -78,13 +80,14 @@ export const ContainerTitle = styled.h1(() => [
     //w-4/6
     relative
     flex
-    md:justify-center
+    sm:justify-center
     items-center
-    text-right
-    mr-10
+    sm:text-right
+    text-center
+    sm:mr-10
+    sm:ml-40
     font-medium
-    sm:text-lg
-    text-sm
+    text-lg
     leading-9
   `
 ])
