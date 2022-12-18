@@ -28,38 +28,30 @@ export default function BlogTemplate({ postsProps }: BlogTemplateProps) {
     <S.Main>
       <S.Container>
         {postsProps.map((post, key: number) => (
-          <h1 key={key}>
-            <div tw="md:flex flex-col bg-purple-4 rounded-xl overflow-hidden relative">
-              <div tw="h-32 overflow-hidden">
+          <div tw="md:flex flex-col cursor-pointer" key={key}>
+            <Link href={`blog/${post.slug}`}>
+              <div tw="relative shadow-sm h-36 rounded-xl overflow-hidden">
                 <S.CoverImage src={post.coverImage.url} />
-              </div>
-              <S.ProfileImage>
-                <Image
-                  layout="intrinsic"
-                  width={384}
-                  height={512}
-                  src={post.author.profileImage.url}
-                />
-              </S.ProfileImage>
-              <div tw="mt-6 pt-6 md:p-8 text-center md:text-left space-y-4">
-                <figcaption>
-                  <Link href={`blog/${post.slug}`}>
-                    <p
-                      tw="text-lg font-medium text-purple-1"
-                      className="link link--kale"
-                    >
-                      {post.title}
-                    </p>
-                  </Link>
-                </figcaption>
-                <hr />
-                <div tw="font-medium flex justify-between">
-                  <div tw="text-purple-1">Flavio Ever</div>
-                  <div tw="text-purple-1 dark:text-purple-2">{post.date}</div>
+                <S.ProfileImage>
+                  <Image
+                    layout="intrinsic"
+                    width={384}
+                    height={512}
+                    src={post.author.profileImage.url}
+                  />
+                </S.ProfileImage>
+                <div tw="relative flex h-full w-full justify-between">
+                  <div tw="sm:w-4/6 w-2/4">
+                    {/* <div tw="text-purple-3">Flavio Ever</div>
+                  <div tw="text-purple-3">{post.date}</div> */}
+                  </div>
+                  <S.ContainerTitle>
+                    <S.Title title={post.title} />
+                  </S.ContainerTitle>
                 </div>
               </div>
-            </div>
-          </h1>
+            </Link>
+          </div>
         ))}
       </S.Container>
     </S.Main>

@@ -4,60 +4,16 @@ type CoverImageProps = {
   src: string
 }
 
+type TitleProps = {
+  title: string
+}
+
 export const Main = styled.main(() => [
   tw`
     flex
+    m-3
   `,
-  css`
-    .link--kale {
-      font-weight: 600;
-    }
-
-    .link--kale::before {
-      height: 10px;
-      top: 100%;
-      opacity: 0;
-    }
-
-    .link--kale:hover::before {
-      opacity: 1;
-      animation: lineUp 0.3s ease forwards;
-    }
-
-    @keyframes lineUp {
-      0% {
-        transform-origin: 50% 100%;
-        transform: scale3d(1, 0.045, 1);
-      }
-
-      50% {
-        transform-origin: 50% 100%;
-        transform: scale3d(1, 1, 1);
-      }
-
-      51% {
-        transform-origin: 50% 0%;
-        transform: scale3d(1, 1, 1);
-      }
-
-      100% {
-        transform-origin: 50% 0%;
-        transform: scale3d(1, 0.045, 1);
-      }
-    }
-
-    .link--kale::after {
-      content: '';
-      transition: opacity 0.3s;
-      opacity: 0;
-      transition-delay: 0s;
-    }
-
-    .link--kale:hover::after {
-      opacity: 1;
-      transition-delay: 0.3s;
-    }
-  `
+  css``
 ])
 
 export const Container = styled.div(() => [
@@ -66,9 +22,9 @@ export const Container = styled.div(() => [
     mx-auto
     sm:w-3/6
     grid
-    gap-4
+    gap-3
     grid-cols-1
-    sm:grid-cols-3
+    sm:grid-cols-2
   `
 ])
 
@@ -79,14 +35,15 @@ export const PostSection = styled.section(() => [
 ])
 
 export const ProfileImage = styled.section(() => [
-  tw`flex
+  tw`
+  flex
   w-24
   h-24
   absolute
-  top-[4.5rem]
-  left-0
+  top-6
+  left-6
   right-0
-  mx-auto
+  //mx-auto
   rounded-full
   border-4
    text-white-1
@@ -101,14 +58,48 @@ export const ProfileImage = styled.section(() => [
 
 export const CoverImage = styled.div<CoverImageProps>(({ src }) => [
   tw`
-  flex
-  w-full
-  h-32`,
+    absolute
+    top-0
+    right-0
+    left-0
+    bottom-0
+  `,
   css`
     transform: scale(1.1);
     background-size: cover;
-    filter: blur(2px);
-    -webkit-filter: blur(2px);
+    filter: blur(6px);
+    -webkit-filter: blur(6px);
     background-image: url(${src});
+  `
+])
+
+export const ContainerTitle = styled.h1(() => [
+  tw`
+    //w-4/6
+    relative
+    flex
+    md:justify-center
+    items-center
+    text-right
+    mr-10
+    font-medium
+    sm:text-lg
+    text-sm
+    leading-9
+  `
+])
+
+export const Title = styled.h1<TitleProps>(({ title }) => [
+  tw`
+  `,
+  css`
+    ::before {
+      content: '${title}'; /* the content */
+      background-color: var(--custom-orange-1);
+      color: #fff;
+      box-shadow: -10px 0px 0 7px var(--custom-orange-1),
+        10px 0px 0 7px var(--custom-orange-1), 0 0 0 7px var(--custom-orange-1);
+      box-decoration-break: clone;
+    }
   `
 ])
