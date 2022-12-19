@@ -46,7 +46,20 @@ export default function PostTemplate({ postProps }: PostProps) {
             src={postProps.coverImage.url}
           />
         </div>
-        <div tw="text-white-1">{postProps.content}</div>
+        <br />
+        <article tw="text-white-1">
+          <h1 tw="text-xl">{postProps.title}</h1>
+          <br />
+          <p>
+            Por: {postProps.author.name} em {postProps.date}
+          </p>
+          <br />
+          <hr />
+          <br />
+          <p>[{postProps.tags.join(' , ')}]</p>
+          <br />
+          <p>{postProps.content}</p>
+        </article>
       </S.Container>
     </S.Main>
   )
