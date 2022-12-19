@@ -1,13 +1,16 @@
 import client from 'graphql/client'
 import { GET_SMALL_POSTS } from 'graphql/queries'
 import { GetStaticProps } from 'next'
-import BlogTemplate, { BlogTemplateProps } from '../../templates/Blog'
+import BlogTemplate, {
+  BlogTemplateProps,
+  PostProps
+} from '../../templates/Blog'
 
-function Blog({ postsProps }: BlogTemplateProps) {
+function BlogPage({ postsProps }: PostProps) {
   return <BlogTemplate postsProps={postsProps} />
 }
 
-const graphQlAdapter = (posts: any[]) => {
+const graphQlAdapter = (posts: BlogTemplateProps[]) => {
   return {
     postsProps: posts
   }
@@ -22,4 +25,4 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-export default Blog
+export default BlogPage

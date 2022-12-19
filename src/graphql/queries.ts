@@ -61,7 +61,7 @@ export const GET_CONTACT = gql`
 `
 
 export const GET_SMALL_POSTS_RECENTS = gql`
-  query getSmallPosts {
+  query getSmallPostsRecents {
     posts {
       id
       title
@@ -91,9 +91,31 @@ export const GET_SMALL_POSTS = gql`
   }
 `
 
+export const GET_POSTS = gql`
+  query getAllPosts($first: Int) {
+    posts(first: $first) {
+      id
+      title
+      slug
+      date
+      content
+      tags
+      coverImage {
+        url
+      }
+      author {
+        name
+        profileImage {
+          url
+        }
+      }
+    }
+  }
+`
+
 export const GET_FULL_POST_BY_SLUG = gql`
-  query getPreviewPosts() {
-    posts {
+  query getFullPostBySlug($slug: String!) {
+    posts(where: { slug: $slug }) {
       id
       title
       slug
