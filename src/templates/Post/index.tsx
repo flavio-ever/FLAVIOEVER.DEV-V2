@@ -46,7 +46,7 @@ export default function PostTemplate({ postProps }: PostProps) {
             src={postProps.coverImage.url}
           />
         </div>
-        <div>{postProps.content}</div>
+        <div tw="text-white-1">{postProps.content}</div>
       </S.Container>
     </S.Main>
   )
