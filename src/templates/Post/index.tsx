@@ -1,10 +1,16 @@
 import * as S from './styles'
+import md from 'markdown-it'
+import hljs from 'highlight.js'
+import javascript from 'highlight.js/lib/languages/javascript'
+hljs.registerLanguage('javascript', javascript)
+
 import 'twin.macro'
 import { IoIosArrowBack } from 'react-icons/io'
 
 import Link from 'next/link'
 
 import Image from 'next/image'
+import { useEffect } from 'react'
 
 export type PostProps = {
   postProps: PostTemplateProps
@@ -28,6 +34,9 @@ export type PostTemplateProps = {
 }
 
 export default function PostTemplate({ postProps }: PostProps) {
+  useEffect(() => {
+    hljs.initHighlighting()
+  }, [])
   return (
     <S.Main>
       <S.Container>
@@ -40,14 +49,22 @@ export default function PostTemplate({ postProps }: PostProps) {
         </div>
         <div>
           <Image
-            layout="responsive"
+            layout="fixed"
             width={384}
             height={512}
             src={postProps.coverImage.url}
           />
         </div>
-        <br />
-        <article tw="text-white-1">
+
+        <S.ContentMKD>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: md().render(postProps.content)
+            }}
+          />
+        </S.ContentMKD>
+
+        {/* <article tw="text-white-1">
           <h1 tw="text-xl">{postProps.title}</h1>
           <br />
           <p>
@@ -59,7 +76,7 @@ export default function PostTemplate({ postProps }: PostProps) {
           <p>[{postProps.tags.join(' , ')}]</p>
           <br />
           <p>{postProps.content}</p>
-        </article>
+        </article> */}
       </S.Container>
     </S.Main>
   )

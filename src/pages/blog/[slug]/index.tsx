@@ -14,9 +14,10 @@ const Post = ({ postProps }: PostProps) => {
 }
 
 const graphQlAdapter = (post: PostTemplateProps[]) => {
-  console.log(post[0])
+  //console.log(mdxSource)
+
   return {
-    postProps: post[0]
+    postProps: { ...post[0] }
   }
 }
 

@@ -20,7 +20,7 @@ export const Container = styled.div(() => [
   tw`
     container
     mx-auto
-    lg:w-3/6
+    //lg:w-3/6
     grid
     gap-3
     grid-cols-1
@@ -105,4 +105,13 @@ export const Title = styled.h1<TitleProps>(({ title }) => [
       box-decoration-break: clone;
     }
   `
+])
+
+export const ContentMKD = styled.article(() => [
+  tw`
+  //prose
+  mx-auto
+  text-white-1
+  `,
+  css``
 ])

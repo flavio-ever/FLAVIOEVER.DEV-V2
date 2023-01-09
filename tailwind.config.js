@@ -63,5 +63,5 @@ module.exports = {
       'jump-out-down': 'jump-out-down 0.2s ease-out'
     }
   },
-  plugins: []
+  plugins: [require('@tailwindcss/typography')]
 }
